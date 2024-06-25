@@ -1,0 +1,23 @@
+-startup
+plugins/org.eclipse.equinox.launcher_1.5.300.v20190213-1655.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.1.1000.v20190125-2016
+-product
+org.eclipse.epp.package.java.product
+-showsplash
+org.eclipse.epp.package.common
+--launcher.defaultAction
+openFile
+--launcher.defaultAction
+openFile
+--launcher.appendVmargs
+-vm
+C:/Program Files/Java/jdk1.8.0_131/bin/javaw.exe  <-- Highlighted: Corrected path to javaw.exe
+-vmargs
+-Dosgi.requiredJavaVersion=1.8  <-- Highlighted: Corrected syntax for required Java version
+-Dosgi.instance.area.default=@user.home/eclipse-workspace  <-- Highlighted: Corrected instance area default
+-XX:+UseG1GC
+-XX:+UseStringDeduplication
+--add-modules=ALL-SYSTEM  <-- Highlighted: Corrected syntax for add-modules
+-Xms256m
+-Xmx1024m
