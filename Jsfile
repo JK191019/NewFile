@@ -1,0 +1,19 @@
+function changeFieldClass(field, value) {
+    if (value === '1') {
+        SYT_ChangeFldClass(field, "P");
+    } else if (value === '2') {
+        SYT_ChangeFldClass(field, "M");
+    }
+}
+
+const form = document.MAINFORM;
+const fields = [
+    { field: form.KYC_AN_CAA, value: form.KYC_CAA.value },
+    { field: form.USA_PER_AN_CAA, value: form.USA_PER_CAA.value },
+    { field: form.LC_BEG_AN_CAA, value: form.LC_BEG_CAA.value },
+    // Add other fields here
+];
+
+fields.forEach(item => {
+    changeFieldClass(item.field, item.value);
+});
