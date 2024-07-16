@@ -103,3 +103,37 @@ fieldMappings.forEach(mapping => {
     </form>
 </body>
 </html>
+
+
+
+function checkDevolvementReason() {
+    const form = document.MAINFORM;
+    try {
+        const reasons = {
+            DE_VOLMENT_CAA: "Applicant has a history of devolvement of LC bills in the past 12 months.",
+            CON_ALL_ACC_CAA: "It is certified by the BRC that the conduct of all the accounts are not satisfactory.",
+            KYC_CAA: "KYC not updated in Cas as per extant instructions.",
+            USA_PER_CAA: "Usance period of the LC is beyond the sanction terms.",
+            LC_BEG_CAA: "LC issued differs from usual business operations of the Customer.",
+            APPL_BENE_CAA: "Applicant and Beneficiary are associate concerns related parties.",
+            LC_LOAN_CAA: "Specified Margin as per TL sanction is not ensured.",
+            LC_ISSUE_CAA: "LC limit made available in Chs for the LC Liability account does not have necessary approval of the sanctioning authority / appropriate authority.",
+            LC_PER_CAA: "LC period, including usance period, exceeds working capital cycle of the applicant.",
+            DED_STO_CAA: "The stocks procured against the LC are not deducted while arriving at Drawing Power.",
+            PUR_CAP_CAA: "The purpose of Capex LC is not in sync with the sanctioned terms of the Term Loan.",
+            INV_PRO_CAA: "Inventories procured under LC are not in sync with the activity financed.",
+            CASH_CAA: "Cash budgets were not being obtained and examined, wherever applicable, as per extant instructions.",
+            BUY_CRE_CAA: "Buyer's Credit outstanding against the LC limits have not been reduced from the Drawing Power.",
+            TDR_CAA: "Adequate margin is not available and necessary lien is not marked."
+        };
+
+        for (let key in reasons) {
+            if (form[key].value === "2") {
+                form[key + "_REASON_CAA"].value = reasons[key];
+                break;
+            }
+        }
+    } catch (e) {
+        console.error("SYF_INIC_Issue_After_Registoric.js SYF_INLC_Advices_Calculation", e);
+    }
+}
