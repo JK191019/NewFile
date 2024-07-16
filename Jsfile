@@ -17,3 +17,65 @@ const fields = [
 fields.forEach(item => {
     changeFieldClass(item.field, item.value);
 });
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        .P {
+            background-color: lightgreen;
+        }
+        .M {
+            background-color: lightcoral;
+        }
+    </style>
+    <script>
+        function SYT_ChangeFldClass(field, className) {
+            field.className = className;
+        }
+
+        function changeFieldClass(field, value) {
+            if (value === '1') {
+                SYT_ChangeFldClass(field, "P");
+            } else if (value === '2') {
+                SYT_ChangeFldClass(field, "M");
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const form = document.forms['MAINFORM'];
+            if (form) {
+                const fields = [
+                    { field: form.KYC_AN_CAA, value: form.KYC_CAA.value },
+                    { field: form.USA_PER_AN_CAA, value: form.USA_PER_CAA.value },
+                    { field: form.LC_BEG_AN_CAA, value: form.LC_BEG_CAA.value },
+                    // Add other fields here
+                ];
+
+                fields.forEach(item => {
+                    if (item.field && item.value) {
+                        changeFieldClass(item.field, item.value);
+                    }
+                });
+            } else {
+                console.error("Form 'MAINFORM' not found");
+            }
+        });
+    </script>
+</head>
+<body>
+    <form name="MAINFORM">
+        <input type="hidden" name="KYC_CAA" value="1">
+        <input type="text" name="KYC_AN_CAA" placeholder="KYC_AN_CAA">
+        <input type="hidden" name="USA_PER_CAA" value="2">
+        <input type="text" name="USA_PER_AN_CAA" placeholder="USA_PER_AN_CAA">
+        <input type="hidden" name="LC_BEG_CAA" value="1">
+        <input type="text" name="LC_BEG_AN_CAA" placeholder="LC_BEG_AN_CAA">
+        <!-- Add other fields here -->
+    </form>
+</body>
+</html>
