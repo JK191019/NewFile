@@ -137,3 +137,12 @@ function checkDevolvementReason() {
         console.error("SYF_INIC_Issue_After_Registoric.js SYF_INLC_Advices_Calculation", e);
     }
 }
+
+
+var id = document.MAINFORM.C_MAIN_REF.value;
+    var oaagettable= SYS_GetTableData_S("EXIMTRX.INLC_OAA_CAA", "C_MAIN_REF='" + id + "' AND C_FUNC_SHORT_NAME='CONT_OFFICER_OTH'" , "C_FUNC_SHORT_NAME", "C_FUNC_SHORT_NAME_OAA_TEMP", true);
+   var oaagettable1= SYS_GetTableData_S("EXIMTRX.INLC_OAA_CAA", "C_MAIN_REF='" + id + "' AND C_FUNC_SHORT_NAME='BCO'" , "C_FUNC_SHORT_NAME", "C_FUNC_SHORT_NAME_OAA_TEMP", true);
+   if(SYS_FUNCTION_TYPE == 'IQ' || SYS_FUNCTION_TYPE == 'PM' || SYS_FUNCTION_TYPE == 'RE' && (SYS_FUNCTION_TYPE == 'RE' || (oaagettable != "CONT_OFFICER_OTH" && oaagettable != false) || (oaagettable1 !='BCO' &&  oaagettable1 != false))){
+       SYT_OAA_DISPLAY();
+       SYT_CAA_DISPLAY();
+       }
