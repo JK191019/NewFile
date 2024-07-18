@@ -181,3 +181,14 @@ if (SYS_FUNCTION_TYPE == 'IQ' || SYS_FUNCTION_TYPE == 'PM' || shouldProcessDSO) 
     SYT_OAA_DISPLAY();
     SYT_CAA_DISPLAY();
 }
+
+SELECT 
+    COUNT(*) AS Total_LCs,
+    SUM(LC_BAL) AS Total_LC_BAL_Amount
+FROM 
+    INLC_MASTER
+WHERE 
+    CEF_NUMBER = 'your_CEF_number' 
+    AND LC_DATE >= ADD_MONTHS(SYSDATE, -12)
+    AND LC_DATE <= SYSDATE;
+
