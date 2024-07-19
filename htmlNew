@@ -75,3 +75,76 @@
 					
 		</tr>
 </table>
+
+
+
+
+<table width="100%" cellspacing="2" frame="box" style="table-layout:fixed;">
+    <tr>    
+        <td height="15" colspan="8" class="title">CAA Formate</td>
+    </tr>
+    <tr class="color1">    
+        <td class="td_gray label_style">Name of the Unit</td>
+        <td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%;" title="Name of the Unit" maxlength="35" readonly=""></td>
+        <td class="td_gray field_style "></td>
+        <td class="td_gray field_style2"></td>
+        <td class="td_gray label_style">Customer Address 1</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="Customer Address 1" class="CHAR_P" style="width: 220%;" maxlength="35" readonly="">
+        </td>
+    </tr>
+    <tr class="color1">    
+        <td class="td_gray label_style">CIF No.</td>
+        <td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%;" title="CIF No." maxlength="35" readonly=""></td>
+        <td class="td_gray field_style "></td>
+        <td class="td_gray field_style2"></td>
+        <td class="td_gray label_style">Customer Address 2</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="Customer Address 2" class="CHAR_P" style="width: 220%;" maxlength="35" readonly="">
+        </td>
+    </tr>
+    <tr class="color1">    
+        <td class="td_gray label_style">Activity</td>
+        <td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%;" title="Activity" maxlength="35" readonly=""></td>
+        <td class="td_gray field_style "></td>
+        <td class="td_gray field_style2"></td>
+        <td class="td_gray label_style">City/Location</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="City/Location" class="CHAR_P" style="width: 220%;" maxlength="35" readonly="">
+        </td>
+    </tr>
+    <tr class="color1">    
+        <td class="td_gray label_style">Constitution</td>
+        <td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%;" title="Constitution" maxlength="35" readonly=""></td>
+        <td class="td_gray field_style "></td>
+        <td class="td_gray field_style2"></td>
+        <td class="td_gray label_style">State</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="State" class="CHAR_P" style="width: 220%;" maxlength="35" readonly="">
+        </td>
+    </tr>
+    <tr class="color1">    
+        <td class="td_gray label_style">Details of proposed LC</td>
+        <td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%;" title="Details of proposed LC" maxlength="35" readonly=""></td>
+        <td class="td_gray field_style "></td>
+        <td class="td_gray field_style2"></td>
+        <td class="td_gray label_style">Pin Code</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="Pin Code" class="CHAR_P" style="width: 220%;" maxlength="35" readonly="">
+        </td>
+    </tr>
+    <tr class="color1">
+        <td class="td_gray label_style">Transaction Name</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 100%;" class="CHAR_P" size="35" maxlength="35">
+        </td>
+        <td class="td_gray label_style" style="padding-left:120px;">Transaction TRAIL</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="Transaction TRAIL" style="width: 100%;" class="CHAR_P" size="35" maxlength="35">
+        </td>
+        <td class="td_gray label_style" style="padding-left:120px;">Transaction TRAIL</td>
+        <td class="td_gray field_style2">
+            <input type="text" name="DUMY" id="DUMY" title="Transaction TRAIL" style="width: 100%;" class="CHAR_P" size="35" maxlength="35">
+        </td>
+    </tr>
+</table>
