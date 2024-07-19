@@ -192,3 +192,36 @@ WHERE
     AND LC_DATE >= ADD_MONTHS(SYSDATE, -12)
     AND LC_DATE <= SYSDATE;
 
+var id = document.MAINFORM.C_MAIN_REF.value;
+
+// Retrieve data based on id and conditions
+var oaagettable = SYS_GetTableData_S(
+    "EXIMTRX.INLC_OAA_CAA", 
+    "C_MAIN_REF='" + id + "' AND C_FUNC_SHORT_NAME='CONT_OFFICER_OTH'", 
+    "C_FUNC_SHORT_NAME", 
+    "C_FUNC_SHORT_NAME_OAA_TEMP", 
+    true
+);
+
+var oaagettable1 = SYS_GetTableData_S(
+    "EXIMTRX.INLC_OAA_CAA", 
+    "C_MAIN_REF='" + id + "' AND C_FUNC_SHORT_NAME='BCO'", 
+    "C_FUNC_SHORT_NAME", 
+    "C_FUNC_SHORT_NAME_OAA_TEMP", 
+    true
+);
+
+// Check if SYS_FUNCTION_TYPE is 'RE' and determine source function names
+var isRE = SYS_FUNCTION_TYPE == 'RE';
+var isFromCONT_OFFICER_OTH = oaagettable === "CONT_OFFICER_OTH" || oaagettable1 === false;
+var isFromBCO = oaagettable1 === 'BCO' || oaagettable === false;
+var bothFalse = oaagettable === false && oaagettable1 === false;
+
+// Define the condition for DSO processing
+var shouldProcessDSO = isRE && !(isFromCONT_OFFICER_OTH || isFromBCO);
+
+// Main condition check
+if (SYS_FUNCTION_TYPE == 'IQ' || SYS_FUNCTION_TYPE == 'PM' || shouldProcessDSO || (isRE && bothFalse)) {
+    SYT_OAA_DISPLAY();
+    SYT_CAA_DISPLAY();
+}
