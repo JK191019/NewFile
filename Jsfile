@@ -291,3 +291,29 @@ csFuncLevelProto.SYF_OAA_DOC_VIEW = function(event){
 		DisExcpt("SYF_INLC_Issue_After_RegisterLC.js*OAA DOC", e);
 	}
 }
+
+
+csFuncLevelProto.SYF_OAA_DOC_VIEW = function(event) {
+    try {
+        const fields = [
+            'APPL_NM', 'APPL_ID', 'BUSINESS_TYPE', 'APPL_ADD1', 'APPL_ADD2', 
+            'CITY', 'POST_CODE', 'STATE2_TEMP', 'CUST_SEGMENT_TEMP', 'LC_AMT', 
+            'TT_TEMP', 'TENOR_MON', 'F_BASE_PERCENTAGE', 'AR_TEM', 'CHG_COLL_AMT', 
+            'TOLERANCE_PLUS', 'LC_BAL', 'REV_TYPE_TEMP', 'OPERA_ACC_NO', 
+            'LC_LIMIT_CBS_TEMP', 'LC_LIMIT_CBS_TEMP2', 'TOTAL_OS_TEMP', 'BENE_NM', 
+            'TMP_ADV_BK_ID', 'BENE_ADD1', 'BENE_ADD2', 'CITY_P1', 'STATE_CP1_TEMP', 
+            'POST_CODE1', 'DATE_OF_LAST_TEMP', 'SBI_RATING12_TEMP_FINAL', 
+            'RATING1_TEMP', 'RATING_DT14_TEMP', 'MRGN_PER_BG_TEMP', 'TOTAL_OS_AMT_TEMP', 
+            'MARGIN_RT', 'ACTUAL_MARGIN_AMT', 'DEPOSIT_ACC_NO', 'DEPOSIT_ACC_NO1', 
+            'DEPOSIT_ACC_NO2', 'DEPOSIT_ACC_NO3', 'AVAL_LIEN_BAL', 'AVAL_LIEN_BAL1', 
+            'AVAL_LIEN_BAL2', 'AVAL_LIEN_BAL3', 'TAG_20_TEMP', 'UN_PERD_DOST_TEMP1', 
+            'TENOR_DAYS', 'ISSUE_DT', 'EXPIRY_DT', 'EXPIRY_PLC'
+        ];
+
+        fields.forEach(field => {
+            document.MAINFORM[`${field}_CAA`].value = document.MAINFORM[field].value;
+        });
+    } catch (e) {
+        DisExcpt("SYF_INLC_Issue_After_RegisterLC.js*OAA DOC", e);
+    }
+}
