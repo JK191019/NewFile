@@ -225,3 +225,69 @@ if (SYS_FUNCTION_TYPE == 'IQ' || SYS_FUNCTION_TYPE == 'PM' || shouldProcessDSO |
     SYT_OAA_DISPLAY();
     SYT_CAA_DISPLAY();
 }
+
+
+
+
+
+
+
+csFuncLevelProto.SYF_OAA_DOC_VIEW = function(event){
+	try{
+	document.MAINFORM.APPL_NM_CAA.value=document.MAINFORM.APPL_NM.value;
+	document.MAINFORM.APPL_ID_CAA.value=document.MAINFORM.APPL_ID.value;
+	document.MAINFORM.BUSINESS_TYPE_CAA.value=document.MAINFORM.BUSINESS_TYPE.value;
+	document.MAINFORM.APPL_ADD1_CAA.value=document.MAINFORM.APPL_ADD1.value;
+	document.MAINFORM.APPL_ADD2_CAA.value=document.MAINFORM.APPL_ADD2.value;
+	document.MAINFORM.CITY_CAA.value=document.MAINFORM.CITY.value;
+	document.MAINFORM.POST_CODE_CAA.value=document.MAINFORM.POST_CODE.value;
+	document.MAINFORM.STATE2_TEMP_CAA.value=document.MAINFORM.STATE2_TEMP.value;
+	document.MAINFORM.CUST_SEGMENT_TEMP_CAA.value=document.MAINFORM.CUST_SEGMENT_TEMP.value;
+	document.MAINFORM.LC_AMT_CAA.value=document.MAINFORM.LC_AMT.value;
+	document.MAINFORM.TT_TEMP_CAA.value=document.MAINFORM.TT_TEMP.value;
+	document.MAINFORM.TENOR_MON_CAA.value=document.MAINFORM.TENOR_MON.value;
+	document.MAINFORM.F_BASE_PERCENTAGE_CAA.value=document.MAINFORM.F_BASE_PERCENTAGE.value;
+	document.MAINFORM.AR_TEM_CAA.value=document.MAINFORM.AR_TEM.value;
+	document.MAINFORM.CHG_COLL_AMT_CAA.value=document.MAINFORM.CHG_COLL_AMT.value;
+	document.MAINFORM.TOLERANCE_PLUS_CAA.value=document.MAINFORM.TEMP_TOLERANCE_PLUS.value;
+	document.MAINFORM.LC_BAL_CAA.value=document.MAINFORM.LC_BAL.value;
+	document.MAINFORM.REV_TYPE_TEMP_CAA.value=document.MAINFORM.REV_TYPE_TEMP.value;
+	document.MAINFORM.OPERA_ACC_NO_CAA.value=document.MAINFORM.OPERA_ACC_NO.value;
+	document.MAINFORM.LC_LIMIT_CBS_TEMP_CAA.value=document.MAINFORM.LC_LIMIT_CBS_TEMP.value;
+	document.MAINFORM.LC_LIMIT_CBS_TEMP2_CAA.value=document.MAINFORM.LC_LIMIT_CBS_TEMP2.value;
+	document.MAINFORM.TOTAL_OS_TEMP_CAA.value=document.MAINFORM.TOTAL_OS_TEMP.value;
+	document.MAINFORM.BENE_NM_CAA.value=document.MAINFORM.BENE_NM.value;
+	document.MAINFORM.TMP_ADV_BK_ID_CAA.value=document.MAINFORM.TMP_ADV_BK_ID.value;
+	document.MAINFORM.BENE_ADD1_CAA.value=document.MAINFORM.BENE_ADD1.value;
+	document.MAINFORM.BENE_ADD2_CAA.value=document.MAINFORM.BENE_ADD2.value;
+	document.MAINFORM.CITY_P1_CAA.value=document.MAINFORM.CITY_P1.value;
+	document.MAINFORM.STATE_CP1_TEMP_CAA.value=document.MAINFORM.STATE_CP1_TEMP.value;
+	document.MAINFORM.POST_CODE1_CAA.value=document.MAINFORM.POST_CODE1.value;
+	document.MAINFORM.DATE_OF_LAST_TEMP_CAA.value=document.MAINFORM.DATE_OF_LAST_TEMP.value;
+	document.MAINFORM.SBI_RATING12_TEMP_FINAL_CAA.value=document.MAINFORM.SBI_RATING12_TEMP_FINAL.value;
+	document.MAINFORM.RATING1_TEMP_CAA.value=document.MAINFORM.RATING1_TEMP.value;
+	document.MAINFORM.RATING_DT14_TEMP_CAA.value=document.MAINFORM.RATING_DT14_TEMP.value;
+	document.MAINFORM.MRGN_PER_BG_TEMP_CAA.value=document.MAINFORM.MRGN_PER_BG_TEMP.value;
+	document.MAINFORM.TOTAL_OS_AMT_TEMP_CAA.value=document.MAINFORM.TOTAL_OS_AMT_TEMP.value;
+	document.MAINFORM.MARGIN_RT_CAA.value=document.MAINFORM.MARGIN_RT.value;
+	document.MAINFORM.ACTUAL_MARGIN_AMT_CAA.value=document.MAINFORM.ACTUAL_MARGIN_AMT.value;
+	document.MAINFORM.DEPOSIT_ACC_NO_CAA.value=document.MAINFORM.DEPOSIT_ACC_NO.value;
+	document.MAINFORM.DEPOSIT_ACC_NO1_CAA.value=document.MAINFORM.DEPOSIT_ACC_NO1.value;
+	document.MAINFORM.DEPOSIT_ACC_NO2_CAA.value=document.MAINFORM.DEPOSIT_ACC_NO2.value;
+	document.MAINFORM.DEPOSIT_ACC_NO3_CAA.value=document.MAINFORM.DEPOSIT_ACC_NO3.value;
+	document.MAINFORM.AVAL_LIEN_BAL_CAA.value=document.MAINFORM.AVAL_LIEN_BAL.value;
+	document.MAINFORM.AVAL_LIEN_BAL1_CAA.value=document.MAINFORM.AVAL_LIEN_BAL1.value;
+	document.MAINFORM.AVAL_LIEN_BAL2_CAA.value=document.MAINFORM.AVAL_LIEN_BAL2.value;
+	document.MAINFORM.AVAL_LIEN_BAL3_CAA.value=document.MAINFORM.AVAL_LIEN_BAL3.value;
+    document.MAINFORM.TAG_20_TEMP_CAA.value=document.MAINFORM.TAG_20_TEMP.value;
+	document.MAINFORM.UN_PERD_DOST_TEMP1_CAA.value=document.MAINFORM.UN_PERD_DOST_TEMP1.value;
+	document.MAINFORM.TENOR_DAYS_CAA.value=document.MAINFORM.TENOR_DAYS.value;
+	document.MAINFORM.ISSUE_DT_CAA.value=document.MAINFORM.ISSUE_DT.value;
+	document.MAINFORM.EXPIRY_DT_CAA.value=document.MAINFORM.EXPIRY_DT.value;
+	document.MAINFORM.EXPIRY_PLC_CAA.value=document.MAINFORM.EXPIRY_PLC.value;
+
+	}
+	catch (e) {
+		DisExcpt("SYF_INLC_Issue_After_RegisterLC.js*OAA DOC", e);
+	}
+}
