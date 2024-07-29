@@ -351,3 +351,27 @@ csFuncLevelProto.SYF_OAA_DOC_VIEW = function(event) {
 
 
 
+csFuncLevelProto.SYF_CompileNonCompile_check_OAA = function() {
+    try {
+     var form = document.MAINFORM;
+	var oaafileds = ['INSU_OAA','REV_TYPE_OAA','MEANS_GOODS_OAA','MEANS_GOODS_OAA1','LC_CLAUSE_OAA','REPORT_OAA','LC_STAMP_OAA','DOC_SIGN_OAA','LC_APP1_OAA','LC_REQ_OAA','CUST_CIF_OAA'];
+       for (var key in oaafileds) {
+                    if (form[key].value == "2") {
+                        return false
+                    }else{
+                        return true
+                    }
+                }
+		
+
+} catch (e) {
+    DisExcpt("SYF_INLC_Issue_After_RegisterLC.js*SYF_Getdata_CAA", e);
+}
+}
+
+ if (!SYF_CompileNonCompile_check_OAA()) {
+			  return false;
+        }
+
+
+
