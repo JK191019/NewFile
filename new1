@@ -1,0 +1,855 @@
+<%@ taglib uri = "/EXIMTAGS" prefix = "EXIMTAGS"%>
+<div id="V_div" class="HIDDEN_DIV">
+
+    <table width="100%" cellspacing="2" frame="box" style="table-layout:fixed;">
+		<tr>	
+		<td height="15" colspan="8" class="title">Credit Angle Approval (CAA) Format</td>
+		</tr>
+		<tr class="color1">	
+					
+					<td class="td_gray label_style">Name of the Unit</td>
+					<td class="td_gray field_style2"><input type="text" name="APPL_NM_CAA" id="APPL_NM_CAA"  class="CHAR_P" style="width: 220%; " title="Name of the Unit"  ></td>
+						<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style"style="padding-left:30px;""margin-left:20px">Customer Address 1</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="APPL_ADD1_CAA" id="APPL_ADD1_CAA" title="Customer Address 1" class="CHAR_P" style="width: 220%; "  >
+					</td>
+		</tr>
+				<tr class="color1">	
+					
+					<td class="td_gray label_style">CIF No.</td>
+					<td class="td_gray field_style2"><input type="text" name="APPL_ID_CAA" id="APPL_ID_CAA"  class="CHAR_P" style="width: 220%; " title="CIF No."  ></td>
+				<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">Customer Address 2</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="APPL_ADD2_CAA" id="APPL_ADD2_CAA" title="Customer Address 2" class="CHAR_P" style="width: 220%; "  >
+					</td>
+		</tr>
+				<tr class="color1">	
+					
+					<td class="td_gray label_style">Activity</td>
+					<td class="td_gray field_style2"><input type="text" name="BUSINESS_TYPE_CAA" id="BUSINESS_TYPE_CAA"  class="CHAR_P" style="width: 220%; " title="Activity"  ></td>
+					<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">City/Location</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="CITY_CAA" id="CITY_CAA" title="City/Location" class="CHAR_P" style="width: 220%; "  >
+					</td>
+		</tr>
+				<tr class="color1">	
+					
+					<td class="td_gray label_style">Constitution</td>
+					<td class="td_gray field_style2"><input type="text" name="CUST_SEGMENT_TEMP_CAA" id="CUST_SEGMENT_TEMP_CAA"  class="CHAR_P" style="width: 220%; " title="Constitution"  ></td>
+					<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">State</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="STATE2_TEMP_CAA" id="STATE2_TEMP_CAA" title="State" class="CHAR_P" style="width: 220%; "  >
+					</td>
+		</tr>
+				<tr class="color1">	
+					
+					<td class="td_gray label_style"></td>
+					<td class="td_gray field_style2"></td>
+					<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">Pin Code</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="POST_CODE_CAA" id="POST_CODE_CAA" title="Pin Code" class="CHAR_P" style="width: 220%; "  >
+					</td>
+		</tr>
+			
+					<!--<tr class="color1">	
+					
+					<td class="td_gray label_style">Details of proposed LC</td>
+					<td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%; " title="Details of proposed LC"  ></td>
+					<td class="td_gray field_style ">
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style">Pin Code</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="POST_CODE_OAA" id="POST_CODE_OAA" title="Pin Code" class="CHAR_P" style="width: 220%; "  >
+					</td>
+		</tr>-->
+			
+		<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue; "><b>Details of proposed LC</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">LC Inland / Foreign</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="INLAND_CAA" id="INLAND_CAA" title="LC Inland / Foreign" class="CHAR_P" value = 'Inland'>
+						</td>
+						<td class="td_gray label_style2">LC Amount <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_AMT_CAA" id="LC_AMT_CAA" title="LC Amount" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Tolerance <b>(%)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TEMP_TOLERANCE_PLUS_CAA" id="TEMP_TOLERANCE_PLUS_CAA" title="Tolerance" class="CHAR_P"  >
+						</td>
+						
+					<!--	<td class="td_gray label_style2">Interest</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REJ_FLAGFO" id="REJ_FLAGFO" title="Transaction Status" class="CHAR_P" maxlength="35">
+						</td>-->
+		</tr>			
+			
+
+
+
+		<tr class="color1">
+						<td class="td_gray label_style2">Total Amount <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TOTAL_LC_BAL_CAA" id="TOTAL_LC_BAL_CAA" title="Total Amount" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Usance / Sight</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TT_TEMP_CAA" id="TT_TEMP_CAA" title="Usance / Sight" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">Period of LC in months</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TENOR_MON_CAA" id="TENOR_MON_CAA" title="Period of LC in months" class="CHAR_P"  >
+						</td>
+						
+						<td class="td_gray label_style2">Card Rate of commission <b>(%)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="F_BASE_PERCENTAGE_CAA" id="F_BASE_PERCENTAGE_CAA" title="Card Rate of commission (%)" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Approved rate of commission <b>(% PA)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="AR_TEM_CAA" id="AR_TEM_CAA" title="Approved rate of commission (% PA)" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Commission to be recovered <b>(in Rs.)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="CHG_COLL_AMT_CAA" id="CHG_COLL_AMT_CAA" title="Commission to be recovered (in Rs.)" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+							
+						</td>
+		</tr>
+			<tr class="color1">
+					
+					<td class="td_gray label_style2" height="15" style="color:blue; "><b>Sanctioned LC Limit details</b></td>						
+		</tr>
+		<tr class="color1">
+					<td class="td_gray label_style2" height="15" style="padding:8px;""margin-top:0.5px">Purpose of proposed LC</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REV_TYPE_TEMP_CAA" id="REV_TYPE_TEMP_CAA" title="Purpose of proposed LC" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Account Number </td>
+						<td class="td_gray field_style2">
+							<input type="text" name="OPERA_ACC_NO_CAA" id="OPERA_ACC_NO_CAA" title="Account Number" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">LC Limit <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_LIMIT_CBS_TEMP_CAA" id="LC_LIMIT_CBS_TEMP_CAA" title="LC Limit" class="CHAR_P"  >
+						</td>
+						
+						<td class="td_gray label_style2">Current o/s <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_LIMIT_CBS_TEMP2_CAA" id="LC_LIMIT_CBS_TEMP2_CAA" title="Current o/s" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Present request for LC</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_BAL_CAA" id="LC_BAL_CAA" title="Present request for LC" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Total O/s <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TOTAL_OS_TEMP_CAA" id="TOTAL_OS_TEMP_CAA" title="Total O/s" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+							
+						</td>
+		</tr>
+			<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Details of Beneficiary</b></td>
+		</tr>
+		<tr class="color1">
+		                <td class="td_gray label_style2">Beneficiary’s ID</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_ID_CAA" id="BENE_ID_CAA" title="Beneficiary’s ID" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Beneficiary’s Name</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_NM_CAA" id="BENE_NM_CAA" title="Beneficiary’s Name" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Beneficiary’s address1</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_ADD1_CAA" id="BENE_ADD1_CAA" title="Beneficiary’s address1" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Beneficiary’s address2</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_ADD2_CAA" id="BENE_ADD2_CAA" title="Beneficiary’s address2" class="CHAR_P"  >
+						</td>
+						
+		</tr>
+		
+				<tr class="color1">
+						<td class="td_gray label_style2">Beneficiary’s City</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="CITY_P1_CAA" id="CITY_P1_CAA" title="Beneficiary’s City" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Beneficiary’s state</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="STATE_CP1_TEMP_CAA" id="STATE_CP1_TEMP_CAA" title="eneficiary’s state" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Beneficiary’s Pincode</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="POST_CODE1_CAA" id="POST_CODE1_CAA" title="Beneficiary’s Pincode" class="CHAR_P"  >
+						</td>
+												<td class="td_gray label_style2">Date of Sanction</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DATE_OF_LAST_TEMP_CAA" id="DATE_OF_LAST_TEMP_CAA" title="Date of Sanction" class="CHAR_P"  >
+						</td>
+					
+		</tr>
+		<tr class="color1">
+		                <td class="td_gray label_style2">Beneficiary’s bank details along with IFSC Code/ SWIFT Code</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TMP_ADV_BK_ID_CAA" id="TMP_ADV_BK_ID_CAA" title="Beneficiary’s bank details along with IFSC Code/ SWIFT Code" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+					
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+							
+						</td>
+						
+		</tr>
+			<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Credit Rating</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">CRA</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="SBI_RATING12_TEMP_FINAL_CAA" id="SBI_RATING12_TEMP_FINAL_CAA" title="CRA" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">ECRA</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="RATING1_TEMP_CAA" id="RATING1_TEMP_CAA" title="ECRA" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">ECRA Valid Upto</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="RATING_DT14_TEMP_CAA" id="RATING_DT14_TEMP_CAA" title="ECRA Valid Upto" class="CHAR_P"  >
+						</td>
+						
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Security Margin details</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Stipulated Margin %</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="MRGN_PER_BG_TEMP_CAA" id="MRGN_PER_BG_TEMP_CAA" title="Stipulated Margin %" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Stipulated Margin Amount</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TOTAL_OS_AMT_TEMP_CAA" id="TOTAL_OS_AMT_TEMP_CAA" title="Stipulated Margin Amount" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Margin Available Amount</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="ACTUAL_MARGIN_AMT" id="ACTUAL_MARGIN_AMT" title="Margin Available Amount" class="CHAR_P" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Margin Available %</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="MARGIN_RT_CAA" id="MARGIN_RT_CAA" title="Margin Available %" class="CHAR_P"  >
+						</td>
+						
+					
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Additional Margin required (Amount)</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="ACTUAL_MARGIN_AMT_CAA" id="ACTUAL_MARGIN_AMT_CAA" title="Additional Margin required (Amount)" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+		</tr>
+						<!--<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Margin Details</b></td>
+		       </tr>
+			         <tr>
+			            <td class="td_gray label_style2">Lien Ac No</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DEPOSIT_ACC_NO" id="DEPOSIT_ACC_NO" title="Lien Ac No" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">Lien Amount <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="AVAL_LIEN_BAL" id="AVAL_LIEN_BAL" title="Lien Amount" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+					 </tr>-->
+		<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Working Capital Cycle / Usance period</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Working Capital Cycle as per sanction terms</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TAG_20_TEMP_CAA" id="TAG_20_TEMP_CAA" title="Working Capital Cycle as per sanction terms" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Usance period as per sanction terms</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="UN_PERD_DOST_TEMP1_CAA" id="UN_PERD_DOST_TEMP1_CAA" title="Usance period as per sanction terms" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">Usance period of the LC</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TENOR_DAYS_CAA" id="TENOR_DAYS_CAA" title="Usance period of the LC" class="CHAR_P"  >
+						</td>
+						
+						<td class="td_gray label_style2">LC Opening Dates</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="ISSUE_DT_CAA" id="ISSUE_DT_CAA" title="No. of LC devolved during the last 12 months" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+				<tr class="color1">
+						<td class="td_gray label_style2">LC Expiry Date</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="EXPIRY_DT_CAA" id="EXPIRY_DT_CAA" title="LC Expiry Date" class="CHAR_P"  >
+						</td>
+						<!--<td class="td_gray label_style2">LC Place of Expiry</td>
+						<td class="td_gray field_style2">
+						<select name="EXPIRY_PLC_CAA" id="EXPIRY_PLC_CAA" title="LC Place of Expiry" class="CHAR_P">
+							<EXIMTAGS:FldConv fldName="EXPIRY_PLC" smType="false" />
+						</select>
+						
+						</td>-->
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+		 				<td class="td_gray field_style2"></td>
+		        </tr>
+			<td class="td_gray label_style2" height="15" style="color:blue;"><b>Position of LC liability account</b></td>	
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Present Outstanding</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="PS_OUTST_CAA" id="PS_OUTST_CAA" title="Present Outstanding" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">No. of LCs outstanding</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="NO_LC_OUT_CAA" id="NO_LC_OUT_CAA" title="No. of LCs outstanding" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">No. of LCs opened during the last 12 months</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="NO_LC_OPEN_CAA" id="NO_LC_OPEN_CAA" title="No. of LCs opened during the last 12 months" class="CHAR_P"  >
+						</td>
+						
+						<td class="td_gray label_style2">No. of LC devolved during the last 12 months</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="REJ_FLAGFO" title="No. of LC devolved during the last 12 months" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+			<!--<td class="td_gray label_style2" height="15"style="color:blue;"><b>Details of LCs devolved during last 12 months</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Amount (Rs. in lac)</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Amount (Rs. in lac)" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2">Date of devolvement</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Date of devolvement" class="CHAR_P"  >
+						</td>
+							<td class="td_gray label_style2">Date of regularization</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Date of regularization" class="CHAR_P"  >
+						</td>
+						
+						<td class="td_gray label_style2">No. of days for regularization</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="REJ_FLAGFO" title="No. of days for regularization" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Conduct of the Account</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="CON_ALL_ACC_NEW_CAA" id="CON_ALL_ACC_NEW_CAA" title="Conduct of the Account" class="CHAR_P"  >
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+		 				<td class="td_gray field_style2"></td>
+	    </tr>-->
+			<!--	<tr class="color1">
+						<td class="td_gray label_style2">Transaction Name</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 150%; " class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2"style="padding-left:150px;""width: 150%; margin-left:90px " >Transaction TRAIL</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 150%;margin-left:90px " class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2" style="padding-left:250px;""width: 150%;margin-left:90px  ">Transaction TRAIL</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 150%;margin-left:200px " class="CHAR_P" size="35" maxlength="35">
+						</td>
+					
+		</tr>-->
+    </table>
+
+
+
+	<table width="100%" cellspacing="2" frame="box" style="table-layout:fixed;">
+	 
+		<tr class="title">
+			<th  width="40%" id="BCO3" style="text-align: center;">CAA</th>
+			<th  width="20%" id="BCO4" style="text-align: center;">Reason for Non-Compliance</th>
+			<th  width="10%" id="BCO2"style="text-align: center;">Complied/Non Complied</th>
+			<th  width="10%" id="BCO" style="text-align: center;">Approved/Not Approved</th>
+			<th  width="20%" id="BCO1" style="text-align: center;">Remarks</th>
+		</tr>
+		<tr class="color1">
+		<tr>
+				<td class="td_gray">
+				 1. Conduct of all the Accounts.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="CON_ALL_ACC_REASON_CAA" id="CON_ALL_ACC_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="CON_ALL_ACC_CAA" id="CON_ALL_ACC_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="CON_ALL_ACC_AN_CAA" id="CON_ALL_ACC_AN_CAA" title="Approved/Not Approved" class="CHAR_P"  onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="CON_ALL_ACC_RMK_CAA" id="CON_ALL_ACC_RMK_CAA" title="Remarks" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				2. The customer is KYC Compliant.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="KYC_REASON_CAA" id="KYC_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="KYC_CAA" id="KYC_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " ></option>
+				<option selected value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="KYC_AN_CAA" id="KYC_AN_CAA" title="Approved/Not Approved" class="CHAR_P"  onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="KYC_RMK_CAA" id="KYC_RMK_CAA" title="Remarks" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				3. Whether the usance period is consistent with sanction terms.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="USA_PER_REASON_CAA" id="USA_PER_REASON_CAA" title="Reason for Non-Compliance." rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="USA_PER_CAA" id="USA_PER_CAA" title="Complied/Non Complied" class="CHAR_P" >
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="USA_PER_AN_CAA" id="USA_PER_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="USA_PER_RMK_CAA" id="USA_PER_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks." class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				4. Whether LC being issued for the usual business operations of the customer.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_BEG_REASON_CAA" id="LC_BEG_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;"  class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_BEG_CAA" id="LC_BEG_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="LC_BEG_AN_CAA" id="LC_BEG_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_BEG_RMK_CAA" id="LC_BEG_RMK_CAA"  rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>	
+		<tr>
+				<td class="td_gray">
+				5. Whether applicant and beneficiary are sister / associate concern.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="APPL_BENE_REASON_CAA" id="APPL_BENE_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="APPL_BENE_CAA" id="APPL_BENE_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="APPL_BENE_AP_CAA" id="APPL_BENE_AP_CAA"  title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="APPL_BENE_RMK_CAA" id="APPL_BENE_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+			
+			
+		</tr>
+		<tr>
+				<td class="td_gray">
+				6. If LC is against term loan, stipulated term loan margin as per sanction has been ensured.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_LOAN_REASON_CAA" id="LC_LOAN_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_LOAN_CAA" id="LC_LOAN_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="LC_LOAN_AN_CAA" id="LC_LOAN_AN_CAA" style="width: 100%; text-align: center" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_LOAN_RMK_CAA" id="LC_LOAN_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				7. LC outstanding after issuance of the proposed LC is within the limits sanctioned / overdrawn amount has the necessary approval of sanctioning authority.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_ISSUE_REASON_CAA" id="LC_ISSUE_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_ISSUE_CAA" id="LC_ISSUE_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="LC_ISSUE_AN_CAA" id="LC_ISSUE_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray" >
+				<textarea type="text" name="LC_ISSUE_RMK_CAA" id="LC_ISSUE_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				8.  LC period (including usance) is within the working capital cycle of the activity.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_PER_REASON_CAA" id="LC_PER_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_PER_CAA" id="LC_PER_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="LC_PER_AN_CAA" id="LC_PER_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray" >
+				<textarea type="text" name="LC_PER_RMK_CAA" id="LC_PER_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+			
+		<tr>
+				<td class="td_gray" title="If the Branch uploads the Opinion Report while originating the transaction, then following certificate should come for BRC:">
+				9.  We note to deduct of stocks received against LC while calculating DP.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="DED_STO_REASON_CAA" id="DED_STO_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="DED_STO_CAA" id="DED_STO_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="DED_STO_AN_CAA" id="DED_STO_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray" >
+				<textarea type="text" name="DED_STO_RMK_CAA" id="DED_STO_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				10.Purpose of Capex LC is as per the sanctioned TL and list of machinery etc. have been scrutinized from the project report, if applicable.	
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="PUR_CAP_REASON_CAA" id="PUR_CAP_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="PUR_CAP_CAA" id="PUR_CAP_CAA" title="Complied/Non Complied" class="CHAR_P">	
+				<option value=" " selected=""></option>	
+				<option value="1">Complied</option>	
+				<option value="2">Non Complied</option>	
+				</select>	
+				</td>	
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="PUR_CAP_AN_CAA" id="PUR_CAP_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray" >	
+				<textarea type="text" name="PUR_CAP_RMK_CAA" id="PUR_CAP_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>	
+				</td>	
+		</tr>
+		<tr>
+				<td class="td_gray">
+				11.  Whether inventories procured under LC relates to activity financed.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="INV_PRO_REASON_CAA" id="INV_PRO_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="INV_PRO_CAA" id="INV_PRO_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="INV_PRO_AN_CAA" id="INV_PRO_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="INV_PRO_RMK_CAA" id="INV_PRO_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				12.  Cash Budget has been obtained and examined.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="CASH_REASON_CAA" id="CASH_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="CASH_CAA" id="CASH_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="CASH_AN_CAA" id="CASH_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="CASH_RMK_CAA" id="CASH_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				13. Any buyer’s credit outstanding against LC limits have been reduced from the DP.	
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="BUY_CRE_REASON_CAA" id="BUY_CRE_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="BUY_CRE_CAA" id="BUY_CRE_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="BUY_CRE_AN_CAA" id="BUY_CRE_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="BUY_CRE_RMK_CAA" id="BUY_CRE_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr>  
+		<tr>
+				<td class="td_gray">
+				14. Required margin is available as TDR/STDR and lien has been marked there against.	
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="TDR_REASON_CAA" id="TDR_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="TDR_CAA" id="TDR_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="TDR_AN_CAA" id="TDR_AN_CAA" title="Approved/Not Approved" class="CHAR_P" onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray" >
+				<textarea type="text" name="TDR_RMK_CAA" id="TDR_RMK_CAA" rows="50" cols="10" style="width: 100%; height:50px;" title="Remarks" class="CHAR_P"></textarea>
+				</td>
+		</tr> 
+		
+		
+		<tr>
+		<td class="td_gray">
+				 15. Number of Bills devolved as per devolvement table for the last 12 months for the given CIF and where devolvement flag is “Yes” (If the devolvement date and regularization date is same, then it is not treated devolvement).
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="DEVOLMENT_REASON_CAA" id="DEVOLMENT_REASON_CAA" title="Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P"></textarea>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="DEVOLMENT_CAA" id="DEVOLMENT_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " ></option>
+				<option selected value="1">Complied</option>
+				<option  value="2">Non Complied</option>
+				</select>
+				</td>
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="DEVOLMENT_AN_CAA" id="DEVOLMENT_AN_CAA" title="Approved/Not Approved" class="CHAR_P"  onChange = 'SYT_handelFieldChange(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="DEVOLMENT_RMK_CAA" id="DEVOLMENT_RMK_CAA" title="Remarks" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+	</table>
+	
+	<table width="100%" cellspacing="2" frame="box" id="OPINION_DISPLAY_CAA" style="table-layout:fixed;">
+		<tr class="title">
+			<th  width="50%" id="OPN" style="text-align: center;">Opinion Report</th>
+			<th  width="10%" id="OPNAR" style="text-align: center;"></th>
+			<!--<th  width="10%" id="OPNC"style="text-align: center;">Complied/Non Complied</th>-->
+			<th  width="10%" id="OPNAP" style="text-align: center;">Approved/Not Approved</th>
+			<th  width="20%" id="OPNR" style="text-align: center;">Remarks</th>
+		</tr>
+		<tr>
+			<td class="td_gray" id="INFO_OPN_CAA">
+				<B> Opinion Report exception referred to Branch Credit Officer	:</B>
+				</td>
+			<td class="td_gray" >
+			<input type="button" name="VIEW_REPORT_CAA" id="VIEW_REPORT_CAA" title="View Opinion Report" class="CHAR_O" value="View Opinion Report" style="Background:#80BFFF; width: 100%; text-align: center; visibility: visible;"></td>
+			</tr>
+		<tr>
+			<td class="td_gray">
+				 16. We have verified the Opinion Report Summary referred and we provide our decision 
+				</td>
+					<td class="td_gray">
+				<textarea type="text" name="ACCPT_OR_CAA" id="ACCPT_OR_CAA" title=" " rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+				<!--<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="OPN_REPORT_CAA" id="OPN_REPORT_CAA" title="Complied/Non Complied" class="CHAR_P">
+				<option value=" " ></option>
+				<option value="1">Complied</option>
+				<option selected value="2">Non Complied</option>
+				</select>
+				</td>-->
+			<td class="td_gray"  style="text-align:center;">
+              <select style="width:80%;" name="OPN_REPORT_AN_CAA" id="OPN_REPORT_AN_CAA" title="Approved/Not Approved" class="CHAR_P"  onChange = 'SYT_handelFieldChangeOpnrpt(event)'>
+              <option value=" " selected=""></option>
+              <option value="1">Approved</option>
+              <option value="2">Not Approved</option>
+              </select>
+            </td>
+				<td class="td_gray">
+				<textarea type="text" name="OPN_REPORT_RMK_CAA" id="OPN_REPORT_RMK_CAA" title="Remarks" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea>
+				</td>
+		</tr>
+	</table>
+
+	</div>
