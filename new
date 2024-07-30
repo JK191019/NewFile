@@ -1,1 +1,692 @@
 
+<div id="OAA_div"  class="HIDDEN_DIV">
+      <table width="100%" cellspacing="2" frame="box" style="table-layout:fixed;">
+		<tr>	
+		<td height="15" colspan="8" class="title">Operational Angle Approval (OAA) Format</td>
+		</tr>
+		<tr class="color1">	
+					
+					<td class="td_gray label_style">Name of the Unit</td>
+					<td class="td_gray field_style2"><input type="text" name="APPL_NM_OAA" id="APPL_NM_OAA"  class="CHAR_P" style="width: 220%; " title="Name of the Unit" maxlength="35" readonly=""></td>
+						<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style"style="padding-left:30px;""margin-left:20px">Customer Address 1</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="APPL_ADD1_OAA" id="APPL_ADD1_OAA" title="Customer Address 1" class="CHAR_P" style="width: 220%; " maxlength="35" readonly="">
+					</td>
+		</tr>
+				<tr class="color1">	
+					
+					<td class="td_gray label_style">CIF No.</td>
+					<td class="td_gray field_style2"><input type="text" name="APPL_ID_OAA" id="APPL_ID_OAA"  class="CHAR_P" style="width: 220%; " title="CIF No." maxlength="35" readonly=""></td>
+				<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">Customer Address 2</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="APPL_ADD2_OAA" id="APPL_ADD2_OAA" title="Customer Address 2" class="CHAR_P" style="width: 220%; " maxlength="35" readonly="">
+					</td>
+		</tr>
+		<tr class="color1">	
+					
+					<td class="td_gray label_style">Activity</td>
+					<td class="td_gray field_style2"><input type="text" name="BUSINESS_TYPE_OAA" id="BUSINESS_TYPE_OAA"  class="CHAR_P" style="width: 220%; " title="Activity" maxlength="35" readonly=""></td>
+					<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">City/Location</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="CITY_OAA" id="CITY_OAA" title="City/Location" class="CHAR_P" style="width: 220%; " maxlength="35" readonly="">
+					</td>
+		</tr>
+				<tr class="color1">	
+					
+					<td class="td_gray label_style">Constitution</td>
+					<td class="td_gray field_style2"><input type="text" name="CUST_SEGMENT_TEMP_OAA" id="CUST_SEGMENT_TEMP_OAA"  class="CHAR_P" style="width: 220%; " title="Constitution" maxlength="35" readonly=""></td>
+					<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">State</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="STATE2_TEMP_OAA" id="STATE2_TEMP_OAA" title="State" class="CHAR_P" style="width: 220%; " maxlength="35" readonly="">
+					</td>
+		</tr>
+		<tr class="color1">	
+					
+					<td class="td_gray label_style"></td>
+					<td class="td_gray field_style2readonly=""></td>
+					<!--<td class="td_gray field_style ">-->
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style" style="padding-left:30px;""margin-left:20px">Pin Code</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="POST_CODE_OAA" id="POST_CODE_OAA" title="Pin Code" class="CHAR_P" style="width: 220%; " maxlength="35" readonly="">
+					</td>
+		</tr>
+	
+			
+					<!--<tr class="color1">	
+					
+					<td class="td_gray label_style">Details of proposed LC</td>
+					<td class="td_gray field_style2"><input type="text" name="DUMY" id="DUMY"  class="CHAR_P" style="width: 220%; " title="Details of proposed LC" maxlength="35" readonly=""></td>
+					<td class="td_gray field_style ">
+					<td class="td_gray field_style2">
+					<td class="td_gray label_style">Pin Code</td>
+					<td class="td_gray field_style2">
+					<input type="text" name="POST_CODE_OAA" id="POST_CODE_OAA" title="Pin Code" class="CHAR_P" style="width: 220%; " maxlength="35" readonly="">
+					</td>
+		</tr>-->
+			
+		<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue; "><b>Details of proposed LC</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">LC Inland / Foreign</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_INLAND_OAA" id="LC_INLAND_OAA" title="LC Inland / Foreign" class="CHAR_P" size="35" maxlength="35" value="Inland">
+						</td>
+						<td class="td_gray label_style2">LC Amount <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_AMT_OAA" id="LC_AMT_OAA" title="LC Amount" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Tolerance <b>(%)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TEMP_TOLERANCE_PLUS_OAA" id="TEMP_TOLERANCE_PLUS_OAA" title="Tolerance" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+					<!--	<td class="td_gray label_style2">Interest</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REJ_FLAGFO" id="REJ_FLAGFO" title="Transaction Status" class="CHAR_P" maxlength="35">
+						</td>-->
+					<td class="td_gray label_style2">Date of Sanction</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DATE_OF_LAST_TEMP_OAA" id="DATE_OF_LAST_TEMP_OAA" title="Date of Sanction" class="CHAR_P" size="35" maxlength="35">
+						</td>
+		</tr>			
+			
+
+
+
+		<tr class="color1">
+						<td class="td_gray label_style2">Total Amount <b>[in INR]</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="LC_BAL_OAA" id="LC_BAL_OAA" title="Total Amount" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">Usance / Sight</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TT_TEMP_OAA" id="TT_TEMP_OAA" title="Usance / Sight" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Period of LC in months</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="TENOR_MON_OAA" id="TENOR_MON_OAA" title="Period of LC in months" class="CHAR_P" size="35" maxlength="35">
+						</td>
+									<td class="td_gray label_style2" height="15" style="padding:8px;""margin-top:0.5px">Purpose of proposed LC</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REV_TYPE_TEMP_OAA" id="REV_TYPE_TEMP_OAA" title="Purpose of proposed LC" class="CHAR_P" size="35" maxlength="35">
+			            </td>
+						
+		</tr>
+		<tr class="color1">
+		                <td class="td_gray label_style2">Card Rate of commission <b>(%)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="F_BASE_PERCENTAGE_OAA" id="F_BASE_PERCENTAGE_OAA" title="Card Rate of commission (%)" class="CHAR_P" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">Approved rate of commission <b>(% PA)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="AR_TEM_OAA" id="AR_TEM_OAA" title="Approved rate of commission (% PA)" class="CHAR_P" size="35" maxlength="35">
+						</td>
+					
+						<td class="td_gray label_style2">Commission to be recovered <b>(in Rs.)</b></td>
+						<td class="td_gray field_style2">
+							<input type="text" name="CHG_COLL_AMT_OAA" id="CHG_COLL_AMT_OAA" title="Commission to be recovered (in Rs.)" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+					    <td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						
+							
+						
+		</tr>
+			<tr class="color1">
+		                <td class="td_gray label_style2" height="15" style="padding:8px;""margin-top:0.5px">Advising Bank  (1st)</td>
+								<td class="td_gray field_style2">
+							<input type="text" name="ADV_BK_ID_OAA" id="ADV_BK_ID_OAA" title="Advising Bank  (1st)" class="CHAR_P" size="35" maxlength="35">
+			           </td>
+							<td class="td_gray field_style2">
+							<input type="text" name="ADV_BK_NM_OAA" id="ADV_BK_NM_OAA" title="Advising Bank  (1st)" class="CHAR_P" size="35" maxlength="35">
+						</td>
+				
+			 </tr>
+			<tr class="color1">		
+						<td class="td_gray label_style2" height="15" style="padding:8px;""margin-top:0.5px">Advising Bank  (2nd)</td>
+							<td class="td_gray field_style2">
+							<input type="text" name="ADV_BK_ID2_OAA" id="ADV_BK_ID2_OAA" title="Advising Bank  (2nd)" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="ADV_BK_NM2_OAA" id="ADV_BK_NM2_OAA" title="Advising Bank  (2nd)" class="CHAR_P" size="35" maxlength="35">
+			</td>
+			</tr>
+			<tr class="color1">
+			<td class="td_gray label_style2" height="15" style="padding:8px;""margin-top:0.5px">Confirming Bank</td>
+				<td class="td_gray field_style2">
+							<input type="text" name="CONF_BK_ID_OAA" id="CONF_BK_ID_OAA" title="Confirming Bank" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="CONF_BK_NM1_OAA" id="CONF_BK_NM1_OAA" title="Confirming Bank" class="CHAR_P" size="35" maxlength="35">
+			</td>
+										
+			     
+		</tr>
+		
+			<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Details of Beneficiary</b></td>
+		</tr>
+		<tr class="color1">
+				    <td class="td_gray label_style2">Beneficiary’s ID</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_ID_DOC_OAA" id="BENE_ID_DOC_OAA" title="Beneficiary’s ID" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">Beneficiary’s state</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="STATE_CP1_TEMP_OAA" id="STATE_CP1_TEMP_OAA" title="eneficiary’s state" class="CHAR_P" size="35" maxlength="35">
+						</td>
+					<!--	<td class="td_gray label_style2">Account Number :</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_ACC_NO_OAA" id="BENE_ACC_NO_OAA" title="Account Number :" class="CHAR_P" size="35" maxlength="35">
+						</td>-->
+						<td class="td_gray label_style2">IFSC / BIC :</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="SFMS_CODE_OAA" id="SFMS_CODE_OAA" title="IFSC / BIC :" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						   <td class="td_gray label_style2">Name of the Bank: </td>
+						<td class="td_gray field_style2">
+							<input type="text" name="NAME_BK_OAA" id="NAME_BK_OAA" title="Name of the Bank: " class="CHAR_P" size="35" maxlength="35">
+						</td>
+					
+		</tr>
+	
+				<tr class="color1">
+						<td class="td_gray label_style2">Beneficiary’s Name</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="BENE_NM_OAA" id="BENE_NM_OAA" title="Beneficiary’s Name" class="CHAR_P" size="35" maxlength="35">
+						</td>
+					
+						<td class="td_gray label_style2">Beneficiary’s Pincode</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="POST_CODE1_OAA" id="POST_CODE1_OAA" title="Beneficiary’s Pincode" class="CHAR_P" size="35" maxlength="35">
+						</td>
+					   <td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+						</td>
+											   <td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2">
+						</td>
+					
+		</tr>
+			<!--<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Credit Rating</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">CRA</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="SBI_RATING12_TEMP_FINAL_CAA" id="SBI_RATING12_TEMP_FINAL_CAA" title="CRA" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">ECRA</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="RATING1_TEMP_CAA" id="RATING1_TEMP_CAA" title="ECRA" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">ECRA Valid Upto</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="RATING_DT14_TEMP" id="RATING_DT14_TEMP" title="ECRA Valid Upto" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Security Margin details</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Stipulated Margin %</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Stipulated Margin %" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">Stipulated Margin</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Stipulated Margin" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Margin Available %</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Margin Available %" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+						<td class="td_gray label_style2">Margin Available</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Margin Available" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Additional Margin required (Amount)</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Additional Margin required (Amount)" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+		</tr>
+						<tr class="color1">
+						<td class="td_gray label_style2" height="15"><b>Margin Details</b></td>
+		       </tr>
+			         <tr>
+			            <td class="td_gray label_style2">Lien Ac No</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Lien Ac No" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Lien Amount</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Lien Amount" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+					 </tr>
+		<tr class="color1">
+						<td class="td_gray label_style2" height="15" style="color:blue;"><b>Working Capital Cycle / Usance period</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Working Capital Cycle as per sanction terms</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Working Capital Cycle as per sanction terms" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">Usance period as per sanction terms</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Usance period as per sanction terms" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Usance period of the LC</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Usance period of the LC" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+						<td class="td_gray label_style2">LC Opening Dates</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REJ_FLAGFO" id="REJ_FLAGFO" title="No. of LC devolved during the last 12 months" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+				<tr class="color1">
+						<td class="td_gray label_style2">LC Expiry Date</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="LC Expiry Date" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+		 				<td class="td_gray field_style2"></td>
+		        </tr>
+			<td class="td_gray label_style2" height="15" style="color:blue;"><b>Position of LC liability account</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Present Outstanding</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Present Outstanding" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">No. of LCs outstanding</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="No. of LCs outstanding" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">No. of LCs opened during the last 12 months</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="No. of LCs opened during the last 12 months" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+						<td class="td_gray label_style2">No. of LC devolved during the last 12 months</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REJ_FLAGFO" id="REJ_FLAGFO" title="No. of LC devolved during the last 12 months" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+			<td class="td_gray label_style2" height="15"style="color:blue;"><b>Details of LCs devolved during last 12 months</b></td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Amount (Rs. in lac)</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Amount (Rs. in lac)" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2">Date of devolvement</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Date of devolvement" class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2">Date of regularization</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Date of regularization" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						
+						<td class="td_gray label_style2">No. of days for regularization</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="REJ_FLAGFO" id="REJ_FLAGFO" title="No. of days for regularization" class="CHAR_P" maxlength="35">
+						</td>
+		</tr>
+		<tr class="color1">
+						<td class="td_gray label_style2">Conduct of the Account</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Conduct of the Account" class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+						<td class="td_gray field_style2"></td>
+						<td class="td_gray label_style2"></td>
+		 				<td class="td_gray field_style2"></td>
+	    </tr>-->
+			<!--	<tr class="color1">
+						<td class="td_gray label_style2">Transaction Name</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 150%; " class="CHAR_P" size="35" maxlength="35">
+						</td>
+							<td class="td_gray label_style2"style="padding-left:150px;""width: 150%; margin-left:90px " >Transaction TRAIL</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 150%;margin-left:90px " class="CHAR_P" size="35" maxlength="35">
+						</td>
+						<td class="td_gray label_style2" style="padding-left:250px;""width: 150%;margin-left:90px  ">Transaction TRAIL</td>
+						<td class="td_gray field_style2">
+							<input type="text" name="DUMY" id="DUMY" title="Transaction Name" style="width: 150%;margin-left:200px " class="CHAR_P" size="35" maxlength="35">
+						</td>
+					
+		</tr>-->
+    </table>
+
+
+
+
+	<table width="100%" cellspacing="2" frame="box" style="table-layout:fixed;">
+		<tr class="title">
+			<th height="15" width="60%" id = 'CAO2'style="text-align: center;">OAA</th>
+			<th height="15" width="20%" id="CAO4" style="text-align: center;"> Reason for Non-Compliance / Other Information</th>
+			<th height="15" width="10%" id ='CAO3' style="text-align: center;">Complied/Non-Complied</th>
+			<th height="15" width="10%" id = "CAO" style="text-align: center;"> Accepted/Not-Accepted.</th>
+			<th height="15" width="20%" id = "CAO1" style="text-align: center;"> Remarks</th>
+		</tr>
+	
+		<tr class="color1">
+		<tr>
+			<td class="td_gray">
+				1. LC is with adequate insurance as per bank’s norms.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="INSU_REASON_OAA" id="INSU_REASON_OAA" title=" Reason for Non-Compliance." rows="50" cols="10"  style="width: 100%; height:50px;"class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="INSU_OAA" id="INSU_OAA" title="Complied/Non-Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="INSU_ACP_OAA" id="INSU_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray">
+				<textarea  type="text" name="INSU_RMK_OAA" id="INSU_RMK_OAA" title="Remarks" rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P" ></textarea >
+			</td>
+		</tr>
+		<tr>
+			<td class="td_gray">
+				2.Whether LC is for anything other than purchase of raw material.(For Information)
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="REV_TYPE_REASON_OAA" id="REV_TYPE_REASON_OAA" title="Reason for Non-Compliance." rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P" ></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="REV_TYPE_OAA" id="REV_TYPE_OAA" title="Complied/Non-Complied." style="width: 100%; text-align: center" class="CHAR_P">
+				<option value="" selected=""></option>
+				<option value="1" >Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;" id = "CAO">
+				<select style="width:80%;" name="REV_TYPE_ACP_OAA" id="REV_TYPE_ACP_OAA" title="Accepted/Not-Accepted" class="CHAR_P"onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray" id = "CAO1">
+				<textarea type="text" name="REV_TYPE_RMK_OAA" id="REV_TYPE_RMK_OAA" title="Remarks"  rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P" ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				3. Whether LC is without proof of movement of goods.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="MEANS_GOODS_REASON_OAA" id="MEANS_GOODS_REASON_OAA" title="Reason for Non-Compliance." rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="MEANS_GOODS_OAA" id="MEANS_GOODS_OAA" title="Complied/Non-Complied." class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;" id = "CAO">
+				<select style="width:80%;" name="MEANS_GOODS_ACP_OAA" id="MEANS_GOODS_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray" id = "CAO1">
+				<textarea type="text" name="MEANS_GOODS_RMK_OAA" id="MEANS_GOODS_RMK_OAA" title="Remarks."  rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P"  ></textarea >
+			</td>
+		</tr>	
+		<tr>
+				<td class="td_gray">
+				4. Means of transport of goods i.e. rail, road, ship, air etc. Please specify.(For Information)
+				</td>
+				<td class="td_gray">
+			<textarea  type="text" name="MEANS_GOODS_REASON_OAA1" id="MEANS_GOODS_REASON_OAA1" title=" Reason for Non-Compliance" rows="50" cols="10" style="width: 100%; height:50px;"class="CHAR_P" ></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="MEANS_GOODS_OAA1" id="MEANS_GOODS_OAA1" title="Complied/Non-Complied." class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="MEANS_GOODS_ACP_OAA1" id="MEANS_GOODS_ACP_OAA1" title="Accepted/Not-Accepted" class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="MEANS_GOODS_RMK_OAA1" id="MEANS_GOODS_RMK_OAA1" rows="50" cols="10" title="Remarks" style="width: 100%; height:50px;" class="CHAR_P"  ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				5. Whether the LC clauses contain any clause prejudicial to the interest of the Bank?.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_CLAUSE_REASON_OAA" id="LC_CLAUSE_REASON_OAA" title=" Reason for Non-Compliance." rows="50" cols="10"style="width: 100%; height:50px;"class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_CLAUSE_OAA" id="LC_CLAUSE_OAA" title="Complied/Non-Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_CLAUSE_ACP_OAA" id="LC_CLAUSE_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="LC_CLAUSE_RMK_OAA" id="LC_CLAUSE_RMK_OAA" title="Remarks"  rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"  ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				6. Beneficiary Opinion report/ Seller’s credit opinion report from the seller’s banker is obtained and found satisfactory.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="REPORT_REASON_OAA" id="REPORT_REASON_OAA" title=" Reason for Non-Compliance." rows="50" cols="10"  style="width: 100%; height:50px;"class="CHAR_P">
+				</textarea ></td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="REPORT_OAA" id="REPORT_OAA" title="Complied/Non-Complied." class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				<option value="3">Not Applicable</option>
+				</select>
+			 	</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="REPORT_ACP_OAA" id="REPORT_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="REPORT_RMK_OAA" id="REPORT_RMK_OAA" rows="50" cols="10"  title="Remarks" style="width: 100%; height:50px;" class="CHAR_P"  ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				7.  The LC application is duly stamped. Yes / No / NA (for e-trade applications)
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_STAMP_REASON_OAA" id="LC_STAMP_REASON_OAA" title=" Reason for Non-Compliance." rows="50" cols="10"  style="width: 100%; height:50px;" class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_STAMP_OAA" id="LC_STAMP_OAA" title="Complied/Non-Complied." class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_STAMP_ACP_OAA" id="LC_STAMP_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="LC_STAMP_RMK_OAA" id="LC_STAMP_RMK_OAA" rows="50" cols="10" title="Remarks." class="CHAR_P"  style="width: 100%; height:50px;" ></textarea >
+			</td>
+				
+		</tr>
+		<tr>
+				<td class="td_gray">
+				8.The application / documents are signed by the authorized signatory of the unit.	
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="DOC_SIGN_REASON_OAA" id="DOC_SIGN_REASON_OAA" title=" Reason for Non-Compliance." rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="DOC_SIGN_OAA" id="DOC_SIGN_OAA" title="Complied/Non-Complied." class="CHAR_P">	
+				<option value=" " selected=""></option>	
+				<option value="1">Complied</option>	
+				<option value="2">Non Complied</option>	
+				</select>	
+				</td>	
+			<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="DOC_SIGN_ACP_OAA" id="DOC_SIGN_ACP_OAA" title="Accepted/Not-Accepted" class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray" >
+				<textarea type="text" name="DOC_SIGN_RMK_OAA" id="DOC_SIGN_RMK_OAA" rows="50" cols="10" title="Remarks." style="width: 100%; height:50px;" class="CHAR_P" ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				9.  Proposed LC application is complying with UCPDC / FEMA / and other regulatory guidelines.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_APP1_REASON_OAA" id="LC_APP1_REASON_OAA" title=" Reason for Non-Compliance ." rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_APP1_OAA" id="LC_APP1_OAA" title="Complied/Non-Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_APP1_ACP_OAA" id="LC_APP1_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="LC_APP1_RMK_OAA" id="LC_APP1_RMK_OAA"  rows="50" cols="10"title="Remarks" style="width: 100%; height:50px;" class="CHAR_P"  ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				10.  The LC request has been vetted and the underlying documents are found to be in order.
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="LC_REQ_REASON_OAA" id="LC_REQ_REASON_OAA" title=" Reason for Non-Compliance." rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P">
+				</textarea ></td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_REQ_OAA" id="LC_REQ_OAA" title="Complied/Non-Complied" class="CHAR_P">
+				<option value=" " selected=""></option>
+				<option value="1">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="LC_REQ_ACP_OAA" id="LC_REQ_ACP_OAA" title="Accepted/Not-Accepted." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="LC_REQ_RMK_OAA" id="LC_REQ_RMK_OAA" rows="50" cols="10" title="Remarks" style="width: 100%; height:50px;" class="CHAR_P"  ></textarea >
+			</td>
+		</tr>
+		<tr>
+				<td class="td_gray">
+				11. The Customer CIF has been created and accounts linked properly in Exim Bills and MFX.	
+				</td>
+				<td class="td_gray">
+				<textarea type="text" name="CUST_CIF_REASON_OAA" id="CUST_CIF_REASON_OAA" title=" Reason for Non-Compliance ." rows="50" cols="10" style="width: 100%; height:50px;" class="CHAR_P"></textarea >
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="CUST_CIF_OAA" id="CUST_CIF_OAA" title="Complied/Non-Complied" class="CHAR_P">
+				<option value=""></option>
+				<option value="1" selected="">Complied</option>
+				<option value="2">Non Complied</option>
+				</select>
+				</td>
+				<td class="td_gray"  style="text-align:center;">
+				<select style="width:80%;" name="CUST_CIF_ACP_OAA" id="CUST_CIF_ACP_OAA" title="Accepted/Not-AcceptedX." class="CHAR_P" onChange = 'SYT_handelFieldChangeoaa(event)'>
+                <option value=" " selected=""></option>
+                <option value="1">Accepted</option>
+                <option value="2">Not-Accepted.</option>
+                </select>
+				</td>
+				<td class="td_gray"  >
+				<textarea type="text" name="CUST_CIF_RMK_OAA" id="CUST_CIF_RMK_OAA" rows="50" cols="10" title="Remarks." style="width: 100%; height:50px;" class="CHAR_P"  ></textarea >
+			</td>
+		</tr> 
+	</table>
+</div>
+
+
+
