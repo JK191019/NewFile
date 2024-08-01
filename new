@@ -137,3 +137,41 @@ var tables = [
 ].join(", ");
 
 var TOTAL_LC_CAA = SYS_GetTableData_S(tables, queryCondition, columns, "TOTAL_LC_CAA", true);
+
+
+
+
+function SYT_CAA_UPDATEINGFILED_CLASS() {
+    try {
+var fieldMappings = [
+    {field: document.MAINFORM.CON_ALL_ACC_CAA, target: document.MAINFORM.CON_ALL_ACC_AN_CAA},
+    {field: document.MAINFORM.KYC_CAA, target: document.MAINFORM.KYC_AN_CAA},
+    {field: document.MAINFORM.USA_PER_CAA, target: document.MAINFORM.USA_PER_AN_CAA},
+    {field: document.MAINFORM.LC_BEG_CAA, target: document.MAINFORM.LC_BEG_AN_CAA},
+    {field: document.MAINFORM.APPL_BENE_CAA, target: document.MAINFORM.APPL_BENE_AP_CAA},
+    {field: document.MAINFORM.LC_LOAN_CAA, target: document.MAINFORM.LC_LOAN_AN_CAA},
+    {field: document.MAINFORM.LC_ISSUE_CAA, target: document.MAINFORM.LC_ISSUE_AN_CAA},
+    {field: document.MAINFORM.LC_PER_CAA, target: document.MAINFORM.LC_PER_AN_CAA},
+    {field: document.MAINFORM.DED_STO_CAA, target: document.MAINFORM.DED_STO_AN_CAA},
+    {field: document.MAINFORM.PUR_CAP_CAA, target: document.MAINFORM.PUR_CAP_AN_CAA},
+    {field: document.MAINFORM.INV_PRO_CAA, target: document.MAINFORM.INV_PRO_AN_CAA},
+    {field: document.MAINFORM.CASH_CAA, target: document.MAINFORM.CASH_AN_CAA},
+    {field: document.MAINFORM.BUY_CRE_CAA, target: document.MAINFORM.BUY_CRE_AN_CAA},
+    {field: document.MAINFORM.TDR_CAA, target: document.MAINFORM.TDR_AN_CAA},
+    {field: document.MAINFORM.DEVOLMENT_CAA, target: document.MAINFORM.DEVOLMENT_AN_CAA}
+   
+];
+
+fieldMappings.forEach(mapping => {
+    var value = mapping.field.value;
+    if (value === '1' || value === '') {
+        SYT_ChangeFldClass(mapping.target, "P");
+    } else if (value === '2') {
+        SYT_ChangeFldClass(mapping.target, "M");
+    }
+});
+           
+} catch (e) {
+    DisExcpt("TrxSys.js*SYT_CAA_UPDATEINGFILED_CLASS", e);
+}
+}
