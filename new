@@ -101,3 +101,39 @@ function GetTableData_ajax(mode, sTableName, sSQLWhere, sFieldList,
 		alertErrMsg(getJsErrorMsg("4601", "[SYS_GetTableData] " + e.message));
 	}
 }
+
+var currentDate = new Date();
+var lastYearDate = new Date();
+lastYearDate.setFullYear(currentDate.getFullYear() - 1);
+
+var formatDate = function(date) {
+    var dd = String(date.getDate()).padStart(2, '0');
+    var mm = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
+    var yyyy = date.getFullYear();
+    return yyyy + '-' + mm + '-' + dd;
+};
+
+var queryCondition = 
+    "1=1 " +
+    "AND T2.C_MAIN_REF = T1.C_MAIN_REF " +
+    "AND T3.C_MAIN_REF = T1.C_UNIT_CODE " +
+    "AND T4.C_MAIN_REF = T1.C_MAIN_REF " +
+    "AND T4.I_EVENT_TIMES = T1.I_EVENT_TIMES " +
+    "AND T5.C_MAIN_REF = T1.APPL_ID " +
+    "AND T1.C_TRX_STATUS = 'M' " +
+    "AND T2.C_REL_CERT = '{\"DEVOL_FLG\":\"1\"}' " +
+    "AND T2.C_REL_CERT IS NOT NULL " +
+    "AND (T1.C_CP_UNIT_CODE = '63933' OR T1.C_UNIT_CODE = '63933') " +
+    "AND T1.LODGEMENT_DT >= TO_DATE('" + formatDate(lastYearDate) + "', 'YYYY-MM-DD')";
+
+var columns = "COUNT(T1.LC_NO) AS LC_NO_COUNT";
+
+var tables = [
+    "EXIMTRX.INLC_MASTER T1",
+    "EXIMSYS.TRX_REJECTION_TRACK T2",
+    "EXIMTRX.BRAN_MASTER T3",
+    "EXIMTRX.INLC_LEDGER T4",
+    "EXIMTRX.STAT_MASTER T5"
+].join(", ");
+
+var TOTAL_LC_CAA = SYS_GetTableData_S(tables, queryCondition, columns, "TOTAL_LC_CAA", true);
