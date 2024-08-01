@@ -35,3 +35,69 @@ SELECT DISTINCT T1.C_CP_UNIT_CODE,
     ORDER BY T1.C_MAIN_REF;
 
 var TOTAL_LC_CAA=SYS_GetTableData_S("INLC_MASTER", "APPL_ID='" + document.MAINFORM.APPL_ID.value + "'  AND SYSDATE >= ADD_MONTHS(SYSDATE, -12)","(count(LC_NO))  LC_NO", "TOTAL_LC_CAA", true);
+function SYS_GetTableData_S(sTableName, sSQLWhere, sFieldList, sMappingList,
+		notshowError) {
+	try {
+		return GetTableData_ajax(false, sTableName, sSQLWhere, sFieldList,
+				sMappingList, '', '', notshowError);
+	} catch (e) {
+		alertErrMsg(getJsErrorMsg("4601", "[SYS_GetTableData_S] " + e.message));
+	}
+}
+function GetTableData_ajax(mode, sTableName, sSQLWhere, sFieldList,
+		sMappingList, sSucJsFuncName, sFailJsFuncName, notshowError) {
+	if (sTableName == null || sTableName.trim() == "") {
+		alertErrMsg(getJsErrorMsg("4471", "sTableName"));
+		return false;
+	}
+
+	if (sFieldList == null || sFieldList.trim() == "") {
+		alertErrMsg(getJsErrorMsg("4471", "sFieldList"));
+		return false;
+	}
+	try {
+		var url = "../servlets/WSTrxManager";
+		var paraData = "_TRX_STATUS=TRX_GET_CUBK&TYPE=GETTABLEDATA";
+		// table name
+		if (sTableName == null || sTableName.trim() == ""
+				|| sTableName == "undefined") {
+			alertErrMsg(getJsErrorMsg("4471", "sTableName"));
+			return false;
+		} else
+			paraData += "&TABLENAME=" + sTableName;
+
+		// sql where
+		if (sSQLWhere != null && sSQLWhere.trim() != ""
+				&& sSQLWhere != "undefined")
+			paraData += "&SQLWHERE=" + encodeURIComponent(sSQLWhere);
+
+		// fields list
+		if (sFieldList == null || sFieldList.trim() == ""
+				|| sFieldList == "undefined") {
+			alertErrMsg(getJsErrorMsg("4471", "sFieldList"));
+			return false;
+		} else
+			paraData += "&FIELDLIST=" + sFieldList;
+		// mapping fields list
+		if (sMappingList != null && sMappingList.trim() != ""
+				&& sMappingList != "undefined")
+			paraData += "&MAPPINGLIST=" + sMappingList;
+		/*@ref EE-8081 @date 2015-09-25 @author mec.tang edit_S*/
+//		if (notshowError) {
+		if (notshowError || self.SYS_HIDE_ERROR_ON_NO_DATA) {
+		/*@ref EE-8081 @date 2015-09-25 @author mec.tang edit_E*/
+			paraData += "&notshowError=TRUE";
+		}
+		/*@ref:EE-7354 @author man.li @date 2013-03-22 for GDB boundled by yangchao _S*/
+		//sendRequestByAjaxPost(url, paraData, mode,setFldSysVarValue, sSucJsFuncName,
+		//		sFailJsFuncName);
+		/*@ref:EE-7354 @author man.li @date 2013-03-22 for GDB boundled by yangchao _E*/
+		SYS_SetTimeOutOfAutoSave();
+		/*@ref:EE-7354 @author man.li @date 2013-03-22 for GDB boundled by yangchao _S*/
+		return sendRequestByAjaxPost(url, paraData, mode,setFldSysVarValue, sSucJsFuncName,
+				sFailJsFuncName);
+		/*@ref:EE-7354 @author man.li @date 2013-03-22 for GDB boundled by yangchao _E*/
+	} catch (e) {
+		alertErrMsg(getJsErrorMsg("4601", "[SYS_GetTableData] " + e.message));
+	}
+}
