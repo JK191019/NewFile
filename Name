@@ -287,3 +287,102 @@
 		</form>		
 	</BODY>
 </HTML>
+
+
+<script>
+function dataen(check){
+	var row = check.parentNode.parentNode;
+	var select = row.querySelector("select");
+	var textBox = row.querySelector('input[type="text"]');
+
+	if(check.checked){
+		select.disabled = false;
+		textBox.disabled = false;
+	} else {
+		select.disabled = true;
+		textBox.disabled = true;
+		select.selectedIndex = 0;
+		textBox.value = "";
+	}
+}
+
+function hello(){
+	window.open("../SCRN/DownLoadStampDuty.jsp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=1500,left=1500,width=1400,height=1400"); 
+}
+
+function resetForm(){
+	var rows = document.querySelectorAll("#OAA_Data tr");
+	for (var i = 0; i < rows.length; i++) {
+		var row = rows[i];
+		var checkbox = row.querySelector('input[type="checkbox"]');
+		var select = row.querySelector('select');
+		var textBox = row.querySelector('input[type="text"]');
+
+		if(checkbox){
+			checkbox.checked = false;
+		}
+		if(select){
+			select.disabled = true;
+		}
+		if(textBox){
+			textBox.disabled = true;
+		}
+	}
+}
+
+function SYT_ChangeFldClass1(elements, className){
+	for (var i = 0; i < elements.length; i++) {
+		elements[i].className = className;
+	}
+}
+
+function RMK_ONCHANGE(event){
+	var rmk1 = event.target.value;
+	var rows = document.querySelectorAll("#OAA_Data tr");
+	for (var i = 0; i < rows.length; i++) {
+		var row = rows[i];
+		var remarkElement = row.querySelector('input[name="REMARK_C_OAA"]');
+		if (remarkElement) {
+			if (rmk1 == "1"){
+				SYT_ChangeFldClass1([remarkElement], 'CHAR_P');
+			} else {
+				SYT_ChangeFldClass1([remarkElement], 'CHAR_M');
+			}
+		}
+	}
+}
+
+window.onload = function(){
+	document.getElementById("form").addEventListener("reset", resetForm);
+}
+</script>
+
+<TABLE id="OAA_Data" style="width:100%;heigth:100%">
+	<% for(int i=0; i<data.length; i++) { %>
+		<TR>
+			<% for(int j=0; j<data[i].length; j++) { %>
+				<% if(i == 0) { %>
+					<TH style="text-align:center;color:blue;"><%= data[i][j] %></TH>
+				<% } else { %>
+					<TD>
+						<% if(j == 0) { %>
+							<input type="checkbox" name="" id="" onclick="dataen(this)">
+						<% } else if(j == 7) { %>
+							<input type="button" name="" id="" value="View PDF" onclick="hello()">
+						<% } else if(j == 8) { %>
+							<select name="PENDING_RMK_C_OAA" id="PENDING_RMK_C_OAA" class="CHAR_P" onChange="RMK_ONCHANGE(event)" disabled>
+								<option value="">Select</option>
+								<option value="1">Controlled</option>
+								<option value="2">Pending</option>
+							</select>
+						<% } else if(j == 9) { %>
+							<input type="text" id="REMARK_C_OAA" name="REMARK_C_OAA" length="50" disabled>
+						<% } else { %>
+							<div style="text-align:center;color:blue;"><%= data[i][j] %></div>
+						<% } %>
+					</TD>
+				<% } %>
+			<% } %>
+		</TR>
+	<% } %>
+</TABLE>
