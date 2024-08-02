@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+    <TITLE>The View Of Database Table</TITLE>
+    <script>
+        function dataen(check){
+            var row = check.parentNode.parentNode;
+            var select = row.querySelector("select");
+            var textBox = row.querySelector('input[type="text"]');
+
+            if(check.checked){
+                select.disabled = false;
+                textBox.disabled = false;
+            }else{
+                select.disabled = true;
+                textBox.disabled = true;
+                select.selectedIndex = 0;
+                textBox.value = "";
+            }
+        }
+
+        function hello(){
+            window.open("../SCRN/DownLoadStampDuty.jsp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=1500,left=1500,width=1400,height=1400"); 
+        }
+
+        function resetForm(){
+            var rows = document.querySelectorAll("#OAA_Data tr");
+            rows.forEach(row =>{
+                var checkbox = row.querySelector('input[type="checkbox"]');
+                var select = row.querySelector('select');
+                var textBox = row.querySelector('input[type="text"]');
+
+                if(checkbox){
+                    checkbox.checked = false;
+                }
+                if(select){
+                    select.disabled = true;
+                    select.selectedIndex = 0;
+                }
+                if(textBox){
+                    textBox.disabled = true;
+                    textBox.value = "";
+                }
+            });
+        }
+
+        function SYT_ChangeFldClass(element, className) {
+            element.className = className;
+        }
+
+        function RMK_ONCHANGE(event){
+            var rmk1 = document.getElementById("PENDING_RMK_C_OAA").value;
+            var remarkElement = document.getElementById("REMARK_C_OAA");
+
+            if (rmk1 == "1"){
+                SYT_ChangeFldClass(remarkElement, "protected");
+            } else {
+                SYT_ChangeFldClass(remarkElement, "mandatory");
+            }
+        }
+
+        window.onload = function(){
+            document.getElementById("form").addEventListener("reset", resetForm);
+        }
+    </script>
+</HEAD>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 2px solid #EBF4FA;
+        padding: 5px;
+    }
+</style>
+
+<BODY>
+    <form id="form" action = "/process.jsp" method = "POST" onsubmit="return validateForm()">
+        <TABLE id="OAA_Data" style="width:100%,height:100%">
+            <%
+                for(int i=0;i<data.length;i++) {
+            %>
+                <TR>
+            <%
+                    for(int j=0;j<data[i].length;j++) {
+                        if(i == 0) {
+            %>
+                            <TH style="text-align:center;color:blue;"><%= data[i][j] %></TH>
+            <%
+                        } else if(j == 0) {
+            %>                        
+                            <TD><input type="checkbox" name="" id="" onclick="dataen(this)"></TD>
+            <%
+                        } else if(j == 7) {
+            %>                        
+                            <TD style="text-align:center"><input type="button" name="" id="" value="View PDF" onclick="hello()"></TD>
+            <%
+                        } else if(j == 8) {
+            %>                        
+                            <TD>
+                                <select name="PENDING_RMK_C_OAA" id="PENDING_RMK_C_OAA" class="P" onChange="RMK_ONCHANGE(event)" disabled>
+                                    <option value="">Select</option>
+                                    <option value="1">Controlled</option>
+                                    <option value="2">Pending</option>
+                                </select>
+                            </TD>
+            <%
+                        } else if(j == 9) {
+            %>                        
+                            <TD><input type="text" id="REMARK_C_OAA" name="REMARK_C_OAA" length="50" disabled></TD>
+            <%
+                        } else {
+            %>                        
+                            <TD style="text-align:center;color:blue;"><%= data[i][j] %></TD>
+            <%
+                        }
+                    }
+            %>
+                </TR>
+            <%
+                }
+            %>
+        </TABLE>
+        <br>
+        <div style="text-align:center">
+            <input type="submit" style="background-color:#C1DAEC;color:black;" align="center" value="Submit" />&nbsp
+            <input type="reset" style="background-color:#C1DAEC;color:black;" align="center" value="Reset" />
+        </div>
+    </form>      
+</BODY>
+</HTML>
