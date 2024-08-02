@@ -1,130 +1,289 @@
+<%@ page import = "java.io.*" %>
+<%@ page import = "javax.servlet.*" %>
+<%@ page import = "javax.servlet.http.*" %>
+<%@ page import = "org.w3c.dom.Document" %>
+<%@ page import = "org.w3c.dom.NodeList" %>
+<%@ page import = "org.w3c.dom.Node" %>
+<%@ page import = "com.cs.base.xml.XMLManager" %>
+<%@ page import = "com.cs.core.dao.DSManager" %>
+<%@ page import = "com.cs.base.utility.ASPathConst"%>
+<%@ page import = "com.cs.core.utility.CSEEDAOHelper" %>
+<%@ page import = "com.cs.eximap.utility.CSSQLClause" %>
+<%@ page import = "com.cs.core.utility.CompressUtil" %>
+<%@ page import = "com.cs.core.utility.SchemaUtil" %>
+<%@ page import = "com.cs.eximap.utility.APLog" %>
+<%@ page import = "com.cs.eximap.utility.CSSQLStatement" %>
+<%@ page import = "com.cs.eximap.ejb.dao.DAOHelper" %>
+<%@ page import = "com.cs.eximap.utility.APLog" %>
+
+
+
+<%
+	String dataSource = "EXIMT";
+	String data[][] = null;
+    String str;
+
+	int cnt = 0;
+
+    String D_RELE_DATE = "";    
+    String BRANCH_ID_C_CAA = "";
+    String BRAN_NM_C_CAA = "";
+    String C_MAIN_REF = "";
+    String APPL_NM_OAA = "";
+    String LC_CCY = "";
+    String LC_AMT_OAA = "";
+    String C_FUNC_SHORT_NAME = "";
+    String SYT_DT_OAA = "";
+	
+	try {
+		
+		CSSQLStatement sqlStatement = new CSSQLStatement(CSSQLStatement.I_SQL_TYPE_SELECT, "INLC_OAA_CAA",dataSource);
+       	sqlStatement.addField("*", null, null);
+        String whereCon = " D_RELE_DATE >=  SYSDATE - 15 AND C_FUNC_SHORT_NAME ='CONT_OFFICER_OTH'";
+
+        CSSQLClause cSSQLClause = new CSSQLClause();
+	    cSSQLClause.setClause(whereCon, null, null);
+	    
+	    sqlStatement.setClause(cSSQLClause);	    
+	    Document rtnDoc = CSEEDAOHelper.commExecuteQuery(sqlStatement);
+        NodeList nodeList = rtnDoc.getElementsByTagName("record");
+        cnt = nodeList.getLength();
+		
+        data = new String[ (cnt + 1) ][10];
+
+        for(int i=0;i<(cnt + 1);i++) {
+        	
+        	for(int j=0;j<10;j++)        		
+        		data[i][j] = "";
+        }
+        
+		data[0][0]  = "S.No";
+		data[0][1]  = "Transaction Date";
+		data[0][2]  = "Branch ID & Name";
+		data[0][3]  = "Transaction  No";
+		data[0][4]  = "Appl Name";
+		data[0][5]  = "Transaction Curr Amt";
+		data[0][6]  = "Fun Short Name";
+		data[0][7]  = "View CAA / OAA PDF";
+		data[0][8]  = "Controlled / Pending";
+	    data[0][9] = "Remarks";
+       	
+		sqlStatement.addField("D_RELE_DATE", null, null);
+		sqlStatement.addField("BRANCH_ID_C_CAA", null, null);
+		sqlStatement.addField("BRAN_NM_C_CAA", null, null);
+       	sqlStatement.addField("C_MAIN_REF", null, null);
+		sqlStatement.addField("APPL_NM_OAA", null, null);
+		sqlStatement.addField("LC_AMT_OAA", null, null);
+       	sqlStatement.addField("C_NOW_EVENT", null, null);
+		sqlStatement.addField("SYT_DT_OAA", null, null);
+        
+
+		cnt = 1;
+        for(int i=0;i<nodeList.getLength();i++) {
+
+       		D_RELE_DATE = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("D_RELE_DATE").item(i), true);
+
+			if(D_RELE_DATE.trim().length() > 0)
+				data[cnt][1] = D_RELE_DATE;
+			else
+				data[cnt][1] = "";
+
+			BRANCH_ID_C_CAA = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("BRANCH_ID_C_CAA").item(i), true);
+			BRAN_NM_C_CAA = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("BRAN_NM_C_CAA").item(i), true);
+
+				if(BRANCH_ID_C_CAA.trim().length() > 0)
+					data[cnt][2] = BRANCH_ID_C_CAA + " - " +BRAN_NM_C_CAA;
+				else
+					data[cnt][2] = "";
+
+      		C_MAIN_REF = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("C_MAIN_REF").item(i), true);
+
+			if(C_MAIN_REF.trim().length() > 0)
+				data[cnt][3] = C_MAIN_REF;
+			else
+				data[cnt][3] = "";
+
+      		APPL_NM_OAA = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("APPL_NM_OAA").item(i), true);
+
+			if(APPL_NM_OAA.trim().length() > 0)
+				data[cnt][4] = APPL_NM_OAA;
+			else
+				data[cnt][4] = "";
+			
+      		LC_AMT_OAA = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("LC_AMT_OAA").item(i), true);
+
+			if(LC_AMT_OAA.trim().length() > 0)
+				data[cnt][5] = "INR " + LC_AMT_OAA;
+			else
+				data[cnt][5] = "";
+			
+      		C_FUNC_SHORT_NAME = XMLManager.getNodeValue(rtnDoc.getElementsByTagName("C_NOW_EVENT").item(i), true);
+
+			if(C_FUNC_SHORT_NAME.trim().length() > 0)
+				data[cnt][6] = C_FUNC_SHORT_NAME;
+			else
+				data[cnt][6] = "";
+
+			cnt += 1;
+		}
+
+	}catch(Exception e) {
+		
+		e.printStackTrace();		
+	}
+%>
 <HTML>
-<HEAD>
-    <TITLE>The View Of Database Table</TITLE>
-    <script>
-        function dataen(check){
-            var row = check.parentNode.parentNode;
-            var select = row.querySelector("select");
-            var textBox = row.querySelector('input[type="text"]');
+	<HEAD>
+	<TITLE>The View Of Database Table</TITLE>
+	<script>
+	 function dataen(check){
+		 var row=check.parentNode.parentNode;
+		 var select=row.querySelector("select");
+		 var textBox=row.querySelector('input[type="text"]');
 
-            if(check.checked){
-                select.disabled = false;
-                textBox.disabled = false;
-            }else{
-                select.disabled = true;
-                textBox.disabled = true;
-                select.selectedIndex = 0;
-                textBox.value = "";
-            }
-        }
+		 if(check.checked){
+			 select.disabled=false;
+			 textBox.disabled=false;
+		 }else{
+			 select.disabled=true;
+			 textBox.disabled=true;
+			 select.selectedIndex=0;
+			 textBox.value="";
+		 }
+	 }
+	 function hello(){
+				
+				window.open("../SCRN/DownLoadStampDuty.jsp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=1500,left=1500,width=1400,height=1400"); 
+			}
 
-        function hello(){
-            window.open("../SCRN/DownLoadStampDuty.jsp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=1500,left=1500,width=1400,height=1400"); 
-        }
+	function  resetForm(){
+			var rows=document.querySelectorAll("#OAA_Data tr");
+			rows.forEach(row =>{
+				var checkbox = row.querySelector('input[type="checkbox"]');
+				var select = row.querySelector('select');
+				var textBox=row.querySelector('input[type="text"]');
 
-        function resetForm(){
-            var rows = document.querySelectorAll("#OAA_Data tr");
-            rows.forEach(row =>{
-                var checkbox = row.querySelector('input[type="checkbox"]');
-                var select = row.querySelector('select');
-                var textBox = row.querySelector('input[type="text"]');
+				if(checkbox){
+					checkbox.checked=false;
+				}
+				if(select){
+					select.disabled=true;
+				}
+				if(textBox){
+					textBox.disabled=true;
+				}});
+	 }
+	 
+	 function SYT_ChangeFldClass1(element,className){
+		element.className = className;
+	 }
 
-                if(checkbox){
-                    checkbox.checked = false;
-                }
-                if(select){
-                    select.disabled = true;
-                    select.selectedIndex = 0;
-                }
-                if(textBox){
-                    textBox.disabled = true;
-                    textBox.value = "";
-                }
-            });
-        }
+	 function RMK_ONCHANGE(event){
+		var rmk1 = document.getElementsByClassName("PENDING_RMK_C_OAA").value;
+		var remarkElement = document.getElementsByClassName("REMARK_C_OAA");
 
-        function SYT_ChangeFldClass(element, className) {
-            element.className = className;
-        }
+		if (rmk1 == "1"){
+			SYT_ChangeFldClass1(remarkElement, 'CHAR_P');
+		} else {
+			SYT_ChangeFldClass1(remarkElement, 'CHAR_M');
+		}
+	}
 
-        function RMK_ONCHANGE(event){
-            var rmk1 = document.getElementById("PENDING_RMK_C_OAA").value;
-            var remarkElement = document.getElementById("REMARK_C_OAA");
+	 window.onload =function(){
+		document.getElementById("form").addEventListener("reset",resetForm);
+		
+	 }
+		
+	 
+	
+	 </script>
+	 
+	</HEAD>
 
-            if (rmk1 == "1"){
-                SYT_ChangeFldClass(remarkElement, "protected");
-            } else {
-                SYT_ChangeFldClass(remarkElement, "mandatory");
-            }
-        }
+	<style>
+		table {
+		
+			border-collapse: collapse;
+			
+			}
+		th, td {
+			
+			border: 2px solid #EBF4FA;
+			padding: 5px;
+		}
 
-        window.onload = function(){
-            document.getElementById("form").addEventListener("reset", resetForm);
-        }
-    </script>
-</HEAD>
-<style>
-    table {
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 2px solid #EBF4FA;
-        padding: 5px;
-    }
-</style>
-
-<BODY>
-    <form id="form" action = "/process.jsp" method = "POST" onsubmit="return validateForm()">
-        <TABLE id="OAA_Data" style="width:100%,height:100%">
-            <%
-                for(int i=0;i<data.length;i++) {
-            %>
-                <TR>
-            <%
-                    for(int j=0;j<data[i].length;j++) {
-                        if(i == 0) {
-            %>
-                            <TH style="text-align:center;color:blue;"><%= data[i][j] %></TH>
-            <%
-                        } else if(j == 0) {
-            %>                        
-                            <TD><input type="checkbox" name="" id="" onclick="dataen(this)"></TD>
-            <%
-                        } else if(j == 7) {
-            %>                        
-                            <TD style="text-align:center"><input type="button" name="" id="" value="View PDF" onclick="hello()"></TD>
-            <%
-                        } else if(j == 8) {
-            %>                        
-                            <TD>
-                                <select name="PENDING_RMK_C_OAA" id="PENDING_RMK_C_OAA" class="P" onChange="RMK_ONCHANGE(event)" disabled>
-                                    <option value="">Select</option>
-                                    <option value="1">Controlled</option>
-                                    <option value="2">Pending</option>
-                                </select>
-                            </TD>
-            <%
-                        } else if(j == 9) {
-            %>                        
-                            <TD><input type="text" id="REMARK_C_OAA" name="REMARK_C_OAA" length="50" disabled></TD>
-            <%
-                        } else {
-            %>                        
-                            <TD style="text-align:center;color:blue;"><%= data[i][j] %></TD>
-            <%
-                        }
-                    }
-            %>
-                </TR>
-            <%
-                }
-            %>
-        </TABLE>
-        <br>
-        <div style="text-align:center">
-            <input type="submit" style="background-color:#C1DAEC;color:black;" align="center" value="Submit" />&nbsp
-            <input type="reset" style="background-color:#C1DAEC;color:black;" align="center" value="Reset" />
-        </div>
-    </form>      
-</BODY>
+		.CHAR_M {
+			background-color: #e5fff1;
+		}
+		.CHAR_P{
+			background-color: #ffffff;
+		}
+	</style>
+      
+		<form id="form" action = "/process.jsp" method = "POST" onsubmit="return validateForm()">
+			
+			<TABLE id="OAA_Data" style="width:100%;heigth:100%">
+		  
+				<%
+					for(int i=0;i<data.length;i++) {
+				%>
+					<TR>
+				<%
+						for(int j=0;j<data[i].length;j++) {
+				
+							if(i == 0) {
+				%>
+								<TH style="text-align:center;color:blue;"><%= data[i][j] %></TH>
+				<%
+							}
+							else
+							if(j == 0) {
+				%>						
+								<TD><input type="checkbox" name="" id="" onclick="dataen(this)"></TD>
+				<%
+							}
+							else
+							if(j == 7) {
+				%>						
+							<TD style="text-align:center"><input type="button" name=""  id="" value="View PDF" onclick="hello()"></TD>
+				<%
+							}
+							else
+							if(j == 8) {
+				%>						
+								<TD><select name="PENDING_RMK_C_OAA"  id="PENDING_RMK_C_OAA" class="CHAR_P" onChange = "RMK_ONCHANGE(event)" disabled>
+									<option value="">Select</option>
+									<option value="1">Controlled</option>
+									<option value="2">Pending</option>
+									</select>
+								</TD>
+				<%
+							}
+							else
+							if(j == 9) {
+				%>						
+								<TD><input type="text" id="REMARK_C_OAA" name="REMARK_C_OAA" length="50" disabled></TD>
+				<%
+							}
+							else {
+				%>						
+								<TD style="text-align:center;color:blue;"><%= data[i][j] %></TD>
+				<%
+							}
+						}
+				%>
+					</TR>
+				<%
+					}
+				%>
+				
+			</TABLE>
+			<br>
+			<div style="text-align:center">
+				<input type = "submit" style="background-color:#C1DAEC ;color:black;" align="center" value = "Submit" />&nbsp
+				<input type = "Reset" style="background-color:#C1DAEC ;color:black;" align="center" value = "Reset" />
+			</div>
+			
+		</form>		
+	</BODY>
 </HTML>
