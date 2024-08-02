@@ -418,3 +418,69 @@ window.onload = function(){
         </TR>
     <% } %>
 </TABLE>
+
+
+<script>
+function dataen(check){
+    var row = check.parentNode.parentNode;
+    var select = row.querySelector("select");
+    var textBox = row.querySelector('input[type="text"]');
+
+    if (check.checked) {
+        select.disabled = false;
+        textBox.disabled = false;
+    } else {
+        select.disabled = true;
+        textBox.disabled = true;
+        select.selectedIndex = 0;
+        textBox.value = "";
+        SYT_ChangeFldClass1(textBox, 'CHAR_P');  // Reset class to default
+    }
+}
+
+function hello(){
+    window.open("../SCRN/DownLoadStampDuty.jsp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=1500,left=1500,width=1400,height=1400"); 
+}
+
+function resetForm(){
+    var rows = document.querySelectorAll("#OAA_Data tr");
+    rows.forEach(row => {
+        var checkbox = row.querySelector('input[type="checkbox"]');
+        var select = row.querySelector('select');
+        var textBox = row.querySelector('input[type="text"]');
+
+        if (checkbox) {
+            checkbox.checked = false;
+        }
+        if (select) {
+            select.disabled = true;
+        }
+        if (textBox) {
+            textBox.disabled = true;
+        }
+        if (textBox) {
+            SYT_ChangeFldClass1(textBox, 'CHAR_P');  // Reset class to default
+        }
+    });
+}
+
+function SYT_ChangeFldClass1(element, className){
+    element.className = className;
+}
+
+function RMK_ONCHANGE(event){
+    var selectElement = event.target;
+    var row = selectElement.parentNode.parentNode;
+    var remarkElement = row.querySelector('input[name="REMARK_C_OAA"]');
+
+    if (selectElement.value == "1"){
+        SYT_ChangeFldClass1(remarkElement, 'CHAR_P');
+    } else {
+        SYT_ChangeFldClass1(remarkElement, 'CHAR_M');
+    }
+}
+
+window.onload = function(){
+    document.getElementById("form").addEventListener("reset", resetForm);
+}
+</script>
