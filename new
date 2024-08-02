@@ -300,3 +300,27 @@ WHERE T2.C_MAIN_REF = T1.C_MAIN_REF
   AND T1.ISSUE_DT >= TO_DATE('2023-07-01', 'YYYY-MM-DD')
 ORDER BY T1.C_MAIN_REF;
 
+
+let isFirstClick = true;
+
+function validateButtonClick(OAA, CAA) {
+    if (isFirstClick) {
+        isFirstClick = false;
+        alert(`OAA: ${OAA}, CAA: ${CAA}`);
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function handleClick() {
+    const OAA = "some value for OAA"; // Replace with actual OAA value
+    const CAA = "some value for CAA"; // Replace with actual CAA value
+    const result = validateButtonClick(OAA, CAA);
+    console.log(result);  // This will log `false` the first time, and `true` every time after that.
+}
+
+// Example of how you might attach the handler to a button
+document.querySelector('button').addEventListener('click', handleClick);
+
+
