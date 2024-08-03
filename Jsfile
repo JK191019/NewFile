@@ -420,3 +420,34 @@ csFuncLevelProto.SYF_CompileNonCompile_check_CAA = function() {
 if (!SYF_CompileNonCompile_check_OAA()) {
     return false;
 }
+
+
+csFuncLevelProto.SYF_CompileNonCompile_check_CAA = function() {
+    try {
+        var form = document.MAINFORM;
+        var caafileds = ['CON_ALL_ACC_CAA','KYC_CAA','USA_PER_CAA','LC_BEG_CAA','LC_BEG_AN_CAA','APPL_BENE_CAA','LC_LOAN_CAA','LC_LOAN_CAA','LC_ISSUE_CAA','LC_PER_CAA','DED_STO_CAA','PUR_CAP_CAA','INV_PRO_CAA','CASH_CAA','BUY_CRE_CAA','TDR_CAA'];
+        var ApproveFileds = ['CON_ALL_ACC_AN_CAA','KYC_AN_CAA','USA_PER_AN_CAA','LC_BEG_AN_CAA','APPL_BENE_AP_CAA','LC_LOAN_AN_CAA','LC_ISSUE_AN_CAA','LC_PER_AN_CAA','DED_STO_AN_CAA','PUR_CAP_AN_CAA','INV_PRO_AN_CAA','CASH_AN_CAA','BUY_CRE_AN_CAA','TDR_AN_CAA'];
+
+        for (var i = 0; i < caafileds.length; i++) {
+            var caaKey = caafileds[i];
+            var approveKey = ApproveFileds[i];
+
+            if (form[caaKey].value == "2") {
+                if (form[approveKey].value == "1" || form[approveKey].value == "2") {
+                    return true;
+                } else {
+                    alert('OAA AND CAA Certificates are non-compliant; refer to BRC & Control Officer');
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    } catch (e) {
+        DisExcpt("SYF_INLC_Issue_After_RegisterLC.js*SYF_CompileNonCompile_check_CAA", e);
+    }
+};
+
+if (!SYF_CompileNonCompile_check_OAA()) {
+    return false;
+}
