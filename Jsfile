@@ -451,3 +451,34 @@ csFuncLevelProto.SYF_CompileNonCompile_check_CAA = function() {
 if (!SYF_CompileNonCompile_check_OAA()) {
     return false;
 }
+
+
+csFuncLevelProto.SYF_CompileNonCompile_check_OAA = function() {
+    try {
+        var form = document.MAINFORM;
+        var oaafileds = ['INSU_OAA','REV_TYPE_OAA','MEANS_GOODS_OAA','MEANS_GOODS_OAA1','LC_CLAUSE_OAA','REPORT_OAA','LC_STAMP_OAA','DOC_SIGN_OAA','LC_APP1_OAA','LC_REQ_OAA','CUST_CIF_OAA'];
+        var ApproveFiledsOAA = ['INSU_OAA','REV_TYPE_OAA','MEANS_GOODS_OAA','MEANS_GOODS_OAA1','LC_CLAUSE_OAA','REPORT_OAA','LC_STAMP_OAA','DOC_SIGN_OAA','LC_APP1_OAA','LC_REQ_OAA','CUST_CIF_OAA'];
+        var flag = false;
+        for (var i = 0; i < oaafileds.length; i++) {
+            var key = oaafileds[i];
+            var approveKey = ApproveFiledsOAA[i];
+            if (form[key].value == "2") {
+                if (form[approveKey].value == "1" || form[approveKey].value == "2") {
+                    flag = true;
+                    break;
+                } 
+            }
+        }
+
+        if(flag){   
+            alert('OAA AND CAA Certificates are non-compliant; refer to BRC & Control Officer');
+            return false;
+        } else{
+        return false;
+}
+
+       
+    } catch (e) {
+        DisExcpt("SYF_INLC_Issue_After_RegisterLC.js*SYF_CompileNonCompile_check_OAA", e);
+    }
+};
