@@ -15,3 +15,7 @@ csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA = function() {
 	}		 
 
 }
+
+	if(!SYF_INLC_CERTIFICATES_BRC_CAA()){
+			return false
+		}
