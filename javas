@@ -1,4 +1,4 @@
-csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA = function() { 
+upcsFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA = function() { 
 
 	 var fileds = ['LMT_MADE_AVAL_CBS','CONDT_ALL_ACCUT','LC_BUSS_OPERA','APPL_BENE_SIS','LC_LOAN_SATION','WE_STOCK_DP','PURPS_SANC_TL','INVE_PROC_LC','CASH_BUDG_EXAM','ANY_BUY_CRE_OUT']
 	
@@ -19,3 +19,26 @@ csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA = function() {
 	if(!SYF_INLC_CERTIFICATES_BRC_CAA()){
 			return false
 		}
+
+
+csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA = function() { 
+    var fileds = ['LMT_MADE_AVAL_CBS', 'CONDT_ALL_ACCUT', 'LC_BUSS_OPERA', 'APPL_BENE_SIS', 'LC_LOAN_SATION', 'WE_STOCK_DP', 'PURPS_SANC_TL', 'INVE_PROC_LC', 'CASH_BUDG_EXAM', 'ANY_BUY_CRE_OUT'];
+    
+    for (var i = 0; i < fileds.length; i++) {
+        var filedName = fileds[i];
+        var filed = document.MAINFORM[filedName];
+        
+        if (filed.value === '') {
+            alert('Please select BRC Certificates');
+            var objEle = document.getElementById(filedName);
+            getDivByField(objEle);
+            objEle.focus();
+            return false;
+        }
+    }
+    return true;
+};
+
+if (!csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA()) {
+    return false;
+}
