@@ -68,3 +68,21 @@ if (totalOSTempCAA <= effectiveLCAmt) {
 } else {
     document.MAINFORM.LC_ISSUE_CAA.value = '2';
 }
+
+
+var CAA22= SYS_BeFloat(document.MAINFORM.TENOR_DAYS.value);
+var CAA221 = SYS_BeFloat(document.MAINFORM.NEW_TENOR_DAYS.value)
+					var CAA24=document.MAINFORM.EXPIRY_DT.name;
+					var CAA241=document.MAINFORM.NEW_EXPIRY_DT.name;
+					var CAA23=document.MAINFORM.AMD_DT.name;
+					
+					var CAA20=SYS_BeFloat(document.MAINFORM.TAG_20_TEMP.value);
+					
+					var FINAL_CAA1=SYS_GetSubDays(CAA23,CAA24) + CAA22;
+						if(CAA22!='' && CAA24!='' && CAA23 !='' && CAA20!=''){
+							if(FINAL_CAA1 <= CAA20){
+								document.MAINFORM.LC_PER_CAA.value = '1';
+							}else{
+							document.MAINFORM.LC_PER_CAA.value = '2';
+							}
+						}
