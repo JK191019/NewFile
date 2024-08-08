@@ -54,3 +54,17 @@ var caa2 = document.MAINFORM.LC_AMT1.value;
 					else{
 						document.MAINFORM.LC_ISSUE_CAA.value = '2';
 					}
+
+var totalOSTempCAA = document.MAINFORM.TOTAL_OS_TEMP_CAA.value;
+var newLCAmt1 = document.MAINFORM.NEW_LC_AMT1.value;
+var lcAmt1 = document.MAINFORM.LC_AMT1.value;
+
+// If newLCAmt1 is not empty or null, use it; otherwise, use lcAmt1.
+var effectiveLCAmt = newLCAmt1 ? newLCAmt1 : lcAmt1;
+
+// Set LC_ISSUE_CAA based on the comparison with TOTAL_OS_TEMP_CAA.
+if (totalOSTempCAA <= effectiveLCAmt) {
+    document.MAINFORM.LC_ISSUE_CAA.value = '1';
+} else {
+    document.MAINFORM.LC_ISSUE_CAA.value = '2';
+}
