@@ -86,3 +86,22 @@ var CAA221 = SYS_BeFloat(document.MAINFORM.NEW_TENOR_DAYS.value)
 							document.MAINFORM.LC_PER_CAA.value = '2';
 							}
 						}
+
+
+// Get values and convert to floats where applicable
+var CAA22 = SYS_BeFloat(document.MAINFORM.NEW_TENOR_DAYS.value) || SYS_BeFloat(document.MAINFORM.TENOR_DAYS.value);
+var CAA24 = document.MAINFORM.NEW_EXPIRY_DT.value || document.MAINFORM.EXPIRY_DT.value;
+var CAA23 = document.MAINFORM.AMD_DT.value;
+var CAA20 = SYS_BeFloat(document.MAINFORM.TAG_20_TEMP.value);
+
+// Calculate FINAL_CAA1
+var FINAL_CAA1 = SYS_GetSubDays(CAA23, CAA24) + CAA22;
+
+// Perform the comparison and set the value of LC_PER_CAA
+if (CAA22 !== '' && CAA24 !== '' && CAA23 !== '' && CAA20 !== '') {
+    if (FINAL_CAA1 <= CAA20) {
+        document.MAINFORM.LC_PER_CAA.value = '1';
+    } else {
+        document.MAINFORM.LC_PER_CAA.value = '2';
+    }
+}
