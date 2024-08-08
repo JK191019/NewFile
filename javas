@@ -46,6 +46,7 @@ if (!csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA()) {
 
 var CAA05 = document.MAINFORM.TOTAL_OS_TEMP_CAA.value;
 				var CAA02  = document.MAINFORM.NEW_LC_AMT1.value;
+var caa2 = document.MAINFORM.LC_AMT1.value;
 				
 				if (CAA05 <= CAA02){
 						document.MAINFORM.LC_ISSUE_CAA.value = '1';
