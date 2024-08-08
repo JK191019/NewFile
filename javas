@@ -42,3 +42,14 @@ csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA = function() {
 if (!csFuncLevelProto.SYF_INLC_CERTIFICATES_BRC_CAA()) {
     return false;
 }
+
+
+var CAA05 = document.MAINFORM.TOTAL_OS_TEMP_CAA.value;
+				var CAA02  = document.MAINFORM.NEW_LC_AMT1.value;
+				
+				if (CAA05 <= CAA02){
+						document.MAINFORM.LC_ISSUE_CAA.value = '1';
+						}
+					else{
+						document.MAINFORM.LC_ISSUE_CAA.value = '2';
+					}
