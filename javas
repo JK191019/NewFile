@@ -201,3 +201,48 @@ var sbiRatingMap ={
 		DisExcpt("SYF_INLC_Amendment_Issue_InLandLC_DEO.js*SYF_UPDATE_OAA_CAA_DOC", e);
 	}
 }
+
+
+csFuncLevelProto.SYF_UPDATE_OAA_CAA_DOC = function() {
+	try {
+		// Utility function to get the effective value between new and old
+		function getEffectiveValue(newVal, oldVal) {
+			return newVal !== '' ? newVal : oldVal;
+		}
+
+		// Main applicant's address
+		document.MAINFORM.APPL_UP_ADD1_TEMP.value = getEffectiveValue(document.MAINFORM.NEW_APPL_ADD1.value, document.MAINFORM.APPL_ADD1.value);
+		document.MAINFORM.APPL_UP_ADD_TEMP.value = getEffectiveValue(document.MAINFORM.NEW_APPL_ADD2.value, document.MAINFORM.APPL_ADD2.value);
+		document.MAINFORM.APPL_UP_CITY_TEMP.value = getEffectiveValue(document.MAINFORM.NEW_CITY.value, document.MAINFORM.APPL_ADD2.value);
+		document.MAINFORM.APPL_UP_PIN_TEMP.value = getEffectiveValue(document.MAINFORM.NEW_POST_CODE2.value, document.MAINFORM.POST_CODE.value);
+		
+		// State mapping
+		var sbiRatingMap = {
+		    '01':'JAMMU AND KASHMIR','02':'HIMACHAL PRADESH','03':'PUNJAB','04':'CHANDIGARH','05':'UTTARAKHAND','06':'HARYANA','07':'DELHI','08':'RAJASTHAN', '09':'UTTAR PRADESH', '10':'BIHAR','11':'SIKKIM','12':'ARUNACHAL PRADESH', '13':'NAGALAND', '14':'MANIPUR', '15':'MIZORAM',
+            '16':'TRIPURA', '17':'MEGHALAYA', '18':'ASSAM', '19':'WEST BENGAL', '20':'JHARKHAND', '21':'ODISHA','22':'CHATTISGARH', '23':'MADHYA PRADESH', '24':'GUJARAT', '25':'DAMAN AND DIU', '26':'DADRA AND NAGAR HAVELI', '27':'MAHARASHTRA',
+            '28':'ANDHRA PRADESH','29':'KARNATAKA','30':'GOA','31':'LAKSHADWEEP','32':'KERALA','33':'TAMIL NADU','34':'PONDICHERRY','35':'ANDAMAN AND NICOBAR','36':'TELANGANA','99':'MISC STATE'
+		};
+
+		function getStateValue(newState, oldState, map) {
+			var state = getEffectiveValue(newState, oldState);
+			return map.hasOwnProperty(state) ? map[state] : '';
+		}
+
+		document.MAINFORM.STATE_DOC_TEMP_FINAL.value = getStateValue(document.MAINFORM.NEW_STATE2.value, document.MAINFORM.STATE2.value, sbiRatingMap);
+
+		// Beneficiary's address
+		document.MAINFORM.BENE_UP_PIN_TEMP.value = getEffectiveValue(document.MAINFORM.NEW_POST_CODE1.value, document.MAINFORM.POST_CODE1.value);
+		document.MAINFORM.CONFIR_DOC_TEMP_BENE_FINAL.value = getEffectiveValue(document.MAINFORM.NEW_CONF_BK_ID.value, document.MAINFORM.CONF_BK_ID.value);
+		document.MAINFORM.CONFIRM_DOC_TEMP_BENE_FINAL.value = getEffectiveValue(document.MAINFORM.NEW_CONF_BK_NM.value, document.MAINFORM.CONF_BK_NM.value);
+
+		var beneStateMap = {
+		    '01':'JAMMU AND KASHMIR','02':'HIMACHAL PRADESH','03':'PUNJAB','04':'CHANDIGARH','05':'UTTARAKHAND','06':'HARYANA','07':'DELHI','08':'RAJASTHAN', '09':'UTTAR PRADESH', '10':'BIHAR','11':'SIKKIM','12':'ARUNACHAL PRADESH', '13':'NAGALAND', '14':'MANIPUR', '15':'MIZORAM',
+            '16':'TRIPURA', '17':'MEGHALAYA', '18':'ASSAM', '19':'WEST BENGAL', '20':'JHARKHAND', '21':'ODISHA','22':'CHATTISGARH', '23':'MADHYA PRADESH', '24':'GUJARAT', '25':'DAMAN AND DIU', '26':'DADRA AND NAGAR HAVELI', '27':'MAHARASHTRA',
+            '28':'ANDHRA PRADESH','29':'KARNATAKA','30':'GOA','31':'LAKSHADWEEP','32':'KERALA','33':'TAMIL NADU','34':'PONDICHERRY','35':'ANDAMAN AND NICOBAR','36':'TELANGANA','99':'MISC STATE'
+		};
+
+		document.MAINFORM.BENE_DOC_TEMP_FINAL.value = getStateValue(document.MAINFORM.NEW_STATE_CP1.value, document.MAINFORM.STATE_CP1.value, beneStateMap);
+	} catch (e) {
+		DisExcpt("SYF_INLC_Amendment_Issue_InLandLC_DEO.js*SYF_UPDATE_OAA_CAA_DOC", e);
+	}
+}
