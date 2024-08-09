@@ -292,3 +292,31 @@ csFuncLevelProto.SYF_UPDATE_OAA_CAA_DOC = function() {
 		DisExcpt("SYF_INLC_Amendment_Issue_InLandLC_DEO.js*SYF_UPDATE_OAA_CAA_DOC", e);
 	}
 }
+
+
+if(document.MAINFORM.REV_TYPE.value=='1'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Capital Goods";}
+else if(document.MAINFORM.REV_TYPE.value=='2'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Services";}
+else if(document.MAINFORM.REV_TYPE.value=='3'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Raw Material";}
+else if(document.MAINFORM.REV_TYPE.value=='4'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Software";}
+else if(document.MAINFORM.REV_TYPE.value=='5'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Capital Goods - Related Party";}
+else if(document.MAINFORM.REV_TYPE.value=='6'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Services - Related party";}
+else if(document.MAINFORM.REV_TYPE.value=='7'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Raw Material - Related Party";}
+else if(document.MAINFORM.REV_TYPE.value=='8'){document.MAINFORM.REV_TYPE_REASON_OAA.value= " Software - Related Party";}
+
+
+if(document.MAINFORM.MEANS_GOODS.value=='Rail'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= "Rail";}
+else if(document.MAINFORM.MEANS_GOODS.value=='Road'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= " Road";}
+else if(document.MAINFORM.MEANS_GOODS.value=='Sea'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= " Sea";}
+else if(document.MAINFORM.MEANS_GOODS.value=='Air'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= " Air";}
+else if(document.MAINFORM.MEANS_GOODS.value=='Post'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= " Post";}
+else if(document.MAINFORM.MEANS_GOODS.value=='Others'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= " Others";}
+else if(document.MAINFORM.MEANS_GOODS.value=='Not Applicable'){document.MAINFORM.MEANS_GOODS_REASON_OAA1.value= "Not Applicable";}
+
+if(document.MAINFORM.REV_TYPE.value=='2' ){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "YES (Services)";}
+else if(document.MAINFORM.REV_TYPE.value=='4'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "YES (Software)";}
+else if(document.MAINFORM.REV_TYPE.value=='1'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Capital Goods)";}
+else if(document.MAINFORM.REV_TYPE.value=='3'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Raw Material)";}
+else if(document.MAINFORM.REV_TYPE.value=='5'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Capital Goods - Related Party)";}
+else if(document.MAINFORM.REV_TYPE.value=='6'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Services - Related party)";}
+else if(document.MAINFORM.REV_TYPE.value=='7'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Raw Material - Related Party)";}
+else if(document.MAINFORM.REV_TYPE.value=='8'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Software - Related Party)";}
