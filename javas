@@ -320,3 +320,49 @@ else if(document.MAINFORM.REV_TYPE.value=='5'){document.MAINFORM.MEANS_GOODS_REA
 else if(document.MAINFORM.REV_TYPE.value=='6'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Services - Related party)";}
 else if(document.MAINFORM.REV_TYPE.value=='7'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Raw Material - Related Party)";}
 else if(document.MAINFORM.REV_TYPE.value=='8'){document.MAINFORM.MEANS_GOODS_REASON_OAA.value= "NO (Software - Related Party)";}
+
+
+
+// Mapping for REV_TYPE to REV_TYPE_REASON_OAA
+var revTypeMap = {
+    '1': "Capital Goods",
+    '2': "Services",
+    '3': "Raw Material",
+    '4': "Software",
+    '5': "Capital Goods - Related Party",
+    '6': "Services - Related Party",
+    '7': "Raw Material - Related Party",
+    '8': "Software - Related Party"
+};
+
+// Mapping for MEANS_GOODS to MEANS_GOODS_REASON_OAA1
+var meansGoodsMap = {
+    'Rail': "Rail",
+    'Road': "Road",
+    'Sea': "Sea",
+    'Air': "Air",
+    'Post': "Post",
+    'Others': "Others",
+    'Not Applicable': "Not Applicable"
+};
+
+// Mapping for REV_TYPE to MEANS_GOODS_REASON_OAA
+var meansGoodsReasonMap = {
+    '1': "NO (Capital Goods)",
+    '2': "YES (Services)",
+    '3': "NO (Raw Material)",
+    '4': "YES (Software)",
+    '5': "NO (Capital Goods - Related Party)",
+    '6': "NO (Services - Related Party)",
+    '7': "NO (Raw Material - Related Party)",
+    '8': "NO (Software - Related Party)"
+};
+
+// Assign REV_TYPE_REASON_OAA
+document.MAINFORM.REV_TYPE_REASON_OAA.value = revTypeMap[document.MAINFORM.REV_TYPE.value] || '';
+
+// Assign MEANS_GOODS_REASON_OAA1
+document.MAINFORM.MEANS_GOODS_REASON_OAA1.value = meansGoodsMap[document.MAINFORM.MEANS_GOODS.value] || '';
+
+// Assign MEANS_GOODS_REASON_OAA based on REV_TYPE
+document.MAINFORM.MEANS_GOODS_REASON_OAA.value = meansGoodsReasonMap[document.MAINFORM.REV_TYPE.value] || '';
