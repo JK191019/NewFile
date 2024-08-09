@@ -366,3 +366,57 @@ document.MAINFORM.MEANS_GOODS_REASON_OAA1.value = meansGoodsMap[document.MAINFOR
 
 // Assign MEANS_GOODS_REASON_OAA based on REV_TYPE
 document.MAINFORM.MEANS_GOODS_REASON_OAA.value = meansGoodsReasonMap[document.MAINFORM.REV_TYPE.value] || '';
+
+document.MAINFORM.APPL_NM_OAA.value=document.MAINFORM.APPL_NM.value;
+	document.MAINFORM.APPL_ID_OAA.value=document.MAINFORM.APPL_ID.value;
+	document.MAINFORM.BUSINESS_TYPE_OAA.value=document.MAINFORM.BUSINESS_TYPE.value;
+	document.MAINFORM.APPL_ADD1_OAA.value=document.MAINFORM.APPL_ADD1.value;
+	document.MAINFORM.APPL_ADD2_OAA.value=document.MAINFORM.APPL_ADD2.value;
+	document.MAINFORM.CITY_OAA.value=document.MAINFORM.CITY.value;
+	document.MAINFORM.POST_CODE_OAA.value=document.MAINFORM.POST_CODE.value;
+	document.MAINFORM.STATE2_TEMP_OAA.value=document.MAINFORM.STATE2_TEMP.value;
+	document.MAINFORM.CUST_SEGMENT_TEMP_OAA.value=document.MAINFORM.CUST_SEGMENT_TEMP.value;
+	document.MAINFORM.LC_AMT_OAA.value=document.MAINFORM.LC_AMT.value;
+	document.MAINFORM.TT_TEMP_OAA.value=document.MAINFORM.TT_TEMP.value;
+	document.MAINFORM.TENOR_MON_OAA.value=document.MAINFORM.TENOR_MON.value;
+	document.MAINFORM.F_BASE_PERCENTAGE_OAA.value=document.MAINFORM.F_BASE_PERCENTAGE.value;
+	document.MAINFORM.AR_TEM_OAA.value=document.MAINFORM.AR_TEM.value;
+	document.MAINFORM.CHG_COLL_AMT_OAA.value=document.MAINFORM.CHG_COLL_AMT.value;
+	document.MAINFORM.TEMP_TOLERANCE_PLUS_OAA.value=document.MAINFORM.TOLERANCE_PLUS.value;
+	document.MAINFORM.LC_BAL_OAA.value=document.MAINFORM.LC_BAL.value;
+	document.MAINFORM.REV_TYPE_TEMP_OAA.value=document.MAINFORM.REV_TYPE_TEMP.value;
+	document.MAINFORM.ADV_BK_ID_OAA.value=document.MAINFORM.ADV_BK_ID.value;
+    document.MAINFORM.CONF_BK_NM1_OAA.value=document.MAINFORM.CONF_BK_NM.value;
+    document.MAINFORM.BENE_NM_OAA.value=document.MAINFORM.BENE_NM.value;
+	document.MAINFORM.ADV_BK_NM_OAA.value=document.MAINFORM.ADV_BK_NM.value;
+    document.MAINFORM.ADV_BK_ID2_OAA.value=document.MAINFORM.ADV_THU_BK_ID.value;
+    document.MAINFORM.CONF_BK_ID_OAA.value=document.MAINFORM.CONF_BK_ID.value;
+    document.MAINFORM.ADV_BK_NM2_OAA.value=document.MAINFORM.ADV_THU_BK_NM.value;
+	document.MAINFORM.STATE_CP1_TEMP_OAA.value=document.MAINFORM.STATE_CP1_TEMP.value;
+	document.MAINFORM.POST_CODE1_OAA.value=document.MAINFORM.POST_CODE1.value;
+    document.MAINFORM.BENE_ID_DOC_OAA.value=document.MAINFORM.BENE_ID.value;
+    document.MAINFORM.ACCPT_OR_CAA.value=document.MAINFORM.ACCPT_OR.value;
+	document.MAINFORM.ADV_BK_ADD1_OAA.value=document.MAINFORM.ADV_BK_ADD1.value;
+	document.MAINFORM.ADV_BK_ADD2_OAA.value=document.MAINFORM.ADV_BK_ADD2.value;
+	document.MAINFORM.ADV_BK_ADD3_OAA.value=document.MAINFORM.ADV_BK_ADD3.value;
+	document.MAINFORM.ADV_THU_BK_ADD1_OAA.value=document.MAINFORM.ADV_THU_BK_ADD1.value;
+	document.MAINFORM.ADV_THU_BK_ADD2_OAA.value=document.MAINFORM.ADV_THU_BK_ADD2.value;
+	document.MAINFORM.ADV_THU_BK_ADD3_OAA.value=document.MAINFORM.ADV_THU_BK_ADD3.value;
+	document.MAINFORM.CONF_BK_ADD1_OAA.value=document.MAINFORM.CONF_BK_ADD1.value;
+	document.MAINFORM.CONF_BK_ADD2_OAA.value=document.MAINFORM.CONF_BK_ADD2.value;
+	document.MAINFORM.CONF_BK_ADD3_OAA.value=document.MAINFORM.CONF_BK_ADD2.value;
+	document.MAINFORM.TMP_ADV_BK_ID_OAA.value=document.MAINFORM.TMP_ADV_BK_ID.value;
+	document.MAINFORM.BENE_ADD1_OAA.value=document.MAINFORM.BENE_ADD1.value;
+	document.MAINFORM.BENE_ADD2_OAA.value=document.MAINFORM.BENE_ADD2.value;
+	document.MAINFORM.CITY_P1_OAA.value=document.MAINFORM.CITY_P1.value;
+	document.MAINFORM.RUL_BY_OAA.value=document.MAINFORM.RUL_BY.value;
+	document.MAINFORM.USER_TMP_OAA.value=document.MAINFORM.USER_TMP.value;
+	
+if(document.MAINFORM.ADV_THU_BK_ID.value!=''){
+    document.MAINFORM.SFMS_CODE_OAA.value=document.MAINFORM.ADV_THU_BK_ID.value;
+    document.MAINFORM.NAME_BK_OAA.value=document.MAINFORM.ADV_THU_BK_NM.value;
+  }
+else{
+    document.MAINFORM.SFMS_CODE_OAA.value=document.MAINFORM.ADV_BK_ID.value;
+    document.MAINFORM.NAME_BK_OAA.value=document.MAINFORM.ADV_BK_NM.value;
+     }
